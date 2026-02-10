@@ -1,0 +1,33 @@
+ConfigFile = '/home/fullzero/.config/lazysql/config.toml'
+
+[application]
+DefaultPageSize = 300
+DisableSidebar = true
+SidebarOverlay = false
+MaxQueryHistoryPerConnection = 100
+
+[[database]]
+Name = 'vrp'
+URL = 'pgsql://app-user:TMS-secure-PaSsWoRd-27102025@localhost/postgres'
+Provider = 'postgres'
+Username = ''
+Password = ''
+Hostname = ''
+Port = ''
+DBName = 'postgres'
+URLParams = ''
+ReadOnly = false
+Commands = []
+
+[[database]]
+Name = 'moodle'
+URL = 'postgres://randomuser123:randompass456@localhost:5432/postgres?sslmode=disable'
+Provider = 'postgres'
+Username = ''
+Password = ''
+Hostname = ''
+Port = ''
+DBName = 'postgres'
+URLParams = ''
+ReadOnly = false
+Commands = []

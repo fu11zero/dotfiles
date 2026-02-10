@@ -1,0 +1,10 @@
+[
+  {
+    "QueryText": "SELECT * FROM \"public\".\"mdl_user\" WHERE lastname ilike '%во%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2025-12-30T14:11:21.870756735Z"
+  },
+  {
+    "QueryText": "select * from mdl_user;\n",
+    "Timestamp": "2025-12-30T13:57:12.404602964Z"
+  }
+]

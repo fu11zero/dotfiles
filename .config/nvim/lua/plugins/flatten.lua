@@ -1,0 +1,3 @@
+require("flatten").setup({
+  -- config
+})

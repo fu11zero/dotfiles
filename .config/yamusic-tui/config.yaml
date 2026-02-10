@@ -1,0 +1,40 @@
+token: y0__xCK5KlCGN74BiDP-dLnFTDgxrXhB__ZzFk1Mvm9o8kT2R4VB2w7AUn-
+buffer-size-ms: 80
+rewind-duration-s: 5
+volume: 1
+volume-step: 0.05
+suppress-errors: false
+show-lyrics: false
+cache-tracks: likes
+cache-dir: Music/Yandex
+search:
+    artists: true
+    albums: false
+    playlists: false
+controls:
+    quit: q
+    apply: enter
+    cancel: esc
+    cursor-up: k
+    cursor-down: j
+    reload: r
+    show-all-kyes: '?'
+    playlists-up: pgup
+    playlists-down: pgdown
+    playlists-rename: c
+    tracks-like: f
+    tracks-add-to-playlist: a
+    tracks-remove-from-playlist: shift+a
+    tracks-share: ctrl+s
+    tracks-shuffle: ctrl+x
+    tracks-search: /
+    player-pause: ' '
+    player-next: "n"
+    player-previous: p
+    player-rewind-forward: l
+    player-rewind-backward: h
+    player-like: F
+    player-cache: S
+    player-vol-up: +,=
+    player-vol-down: '-'
+    player-toggle-lyrics: t
