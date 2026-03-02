@@ -1,5 +1,5 @@
 
--- Setup language servers.
+vim.lsp.enable('pyright')
 vim.lsp.config('pyright', {
 	settings = {
 	    pyright = {
@@ -15,24 +15,28 @@ vim.lsp.config('pyright', {
 	},	
 })
 
--- vim.lsp.config('tsserver', {})
-vim.lsp.enable('ts_ls')
-vim.lsp.config('ts_ls', {})
-vim.lsp.enable('angularls')
-vim.lsp.config('angularls', {})
-vim.treesitter.language.register('angular', 'htmlangular')
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "htmlangular",
-  callback = function()
-    vim.treesitter.start()
-  end,
+-- Setup Ruff Linter
+vim.lsp.enable('ruff')
+vim.lsp.config('ruff_lsp', {
+  init_options = {
+    settings = {
+      -- Any extra CLI arguments for `ruff` go here.
+      args = {
+		"--select=E,F,UP,N,I,ASYNC,S,PTH",
+		"--line-length=79",
+		"--respect-gitignore",  -- Исключать из сканирования файлы в .gitignore
+      	"--target-version=py311"
+      },
+    }
+  }
 })
 
-vim.lsp.config('rust_analyzer', {
-    settings = {
-        ['rust-analyzer'] = {},
-    },
-})
+vim.lsp.enable('ts_ls')
+vim.lsp.config('ts_ls', {})
+
+vim.lsp.enable('angularls')
+vim.lsp.config('angularls', {})
+
 
 vim.lsp.config('graphql', {
   cmd = { 'graphql-lsp', 'server', '-m', 'stream' },
@@ -51,20 +55,37 @@ vim.lsp.config('graphql', {
 vim.lsp.enable('graphql')
 
 
--- Setup Ruff Linter
-vim.lsp.config('ruff_lsp', {
-  init_options = {
+vim.lsp.config('rust_analyzer', {
     settings = {
-      -- Any extra CLI arguments for `ruff` go here.
-      args = {
-		"--select=E,F,UP,N,I,ASYNC,S,PTH",
-		"--line-length=79",
-		"--respect-gitignore",  -- Исключать из сканирования файлы в .gitignore
-      	"--target-version=py311"
-      },
-    }
-  }
+        ['rust-analyzer'] = {},
+    },
 })
+
+vim.lsp.config('lua_ls', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim" }, -- Mark "vim" as a known global
+                -- Это уберет предупреждение о разных версиях в одном воркспейсе
+                disable = { "missing-fields" }
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.env.VIMRUNTIME,
+                checkThirdParty = false,
+            },
+            runtime = {
+                -- Tell the language server which version of Lua you're using (LuaJIT in Neovim)
+                version = "LuaJIT"
+            },
+            telemetry = {
+                enable = false,
+            },
+        }
+    }
+})
+-- vim.lsp.enable('lua_ls')
+
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

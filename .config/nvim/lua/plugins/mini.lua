@@ -20,4 +20,13 @@ require('mini.move').setup({
     reindent_linewise = true,
   },
 })
-require('mini.pairs').setup()
+require('mini.pairs').setup({
+  mappings = {
+    ['\''] = { action = 'open', pair = '\'\'', neigh_pattern = '[^\\\']' },
+    ['"'] = { action = 'open', pair = '""', neigh_pattern = '[^\\"]' },
+    ['`'] = { action = 'open', pair = '`', neigh_pattern = '[^\\`]' },
+    ['('] = { action = 'open', pair = '()', neigh_pattern = '[^\\)]' },
+    ['['] = { action = 'open', pair = '[]', neigh_pattern = '[^\\]]' },
+    ['{'] = { action = 'open', pair = '{}', neigh_pattern = '[^\\}]' },
+  },
+})

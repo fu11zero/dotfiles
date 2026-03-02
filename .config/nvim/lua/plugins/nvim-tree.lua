@@ -1,6 +1,8 @@
 local api = require("nvim-tree.api")
 
 require("nvim-tree").setup({
+    hijack_netrw = true,
+    hijack_cursor = true,
     actions = {
         change_dir = {
             enable = true,
@@ -116,7 +118,9 @@ require("nvim-tree").setup({
             vim.keymap.set("n", keys, mapping[1], opts)
         end
 
-
+        local ng = require("plugins.angular")
+        vim.keymap.set('n', 'ngg', function () ng.ng_generate() end, { buffer = bufnr, desc = "Angular Schematics (Telescope)" })
+        vim.keymap.set('n', 'ngs', function () ng.run_schematic() end, { buffer = bufnr, desc = "Angular Schematics (Telescope)" })
     end,
 })
 

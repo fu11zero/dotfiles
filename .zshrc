@@ -74,6 +74,7 @@ plugins=(
   git
   ng
   npm
+  node-bin
   pip
   #pyenv
   #autoenv
@@ -135,7 +136,7 @@ JDK_HOME=$JAVA_HOME
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
   export EDITOR='nvim'
 fi
@@ -154,17 +155,19 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias lazydotfiles='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias lf="cd \"\$(command lf -print-last-dir \"$@\")\""
 alias cpr="cp -r"
 alias ls="exa"
 alias l="exa --git -F --color --icons --hyperlink --no-quotes"
 alias ll="l -l"
 alias lg="lazygit"
-alias cat="batcat --style=auto -pp --wrap=never"
+alias cat="bat --style=auto -pp --wrap=never"
 alias curl="curl --location"
 alias curl="curl --location"
 alias br="browsh"
+alias music="yamusic"
 alias data="cd /mnt/data"
 alias y2dl="yt-dlp --proxy 'http://user303744:r7vw24@89.40.215.66:3263'"
 alias P="cd ~/Projects"
@@ -183,8 +186,84 @@ export PATH="/home/fullzero/.local/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export GOPATH=$HOME/go
+export GOPATH=$HOME/.go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 export TERM=xterm-256color
 export PATH="/opt/zig:$PATH"
+
+gen() {
+  local cmd=$1
+  shift
+  schematics ~/Projects/demo/schematics:$cmd --no-dry-run "$@"
+}
+
+sandbox() {
+    local ACTION=$1
+    local PROJECT_ROOT=$(pwd)
+    local PROJECT_NAME=$(basename "$PROJECT_ROOT")
+    local BASE_TMP="/tmp/overlay_sandboxes/$PROJECT_NAME"
+    local UPPER="$BASE_TMP/upper"
+    local WORK="$BASE_TMP/work"
+    local LOWER_BIND="$BASE_TMP/lower_bind"
+
+    case "$ACTION" in
+        on)
+            if mount | grep -q "on $PROJECT_ROOT type overlay"; then
+                echo "⚠️  Песочница уже активна."
+                return
+            fi
+
+            # 1. Просто создаем папки. Они УЖЕ в RAM, так как /tmp это tmpfs
+            mkdir -p "$UPPER" "$WORK" "$LOWER_BIND"
+            
+            # 2. Делаем bind-mount для обхода рекурсии (ошибка "bad superblock")
+            sudo mount --bind "$PROJECT_ROOT" "$LOWER_BIND"
+            # Делаем его Read-Only для безопасности
+            sudo mount -o remount,ro,bind "$LOWER_BIND"
+
+            # 3. Монтируем Overlay
+            sudo mount -t overlay "ovl_$PROJECT_NAME" \
+                -o lowerdir="$LOWER_BIND",upperdir="$UPPER",workdir="$WORK" \
+                "$PROJECT_ROOT"
+            
+            export SANDBOX_ACTIVE=1
+            cd .
+            echo "🚀 Песочница включена."
+            ;;
+        
+        off)
+            if ! mount | grep -q "on $PROJECT_ROOT type overlay"; then
+                echo "❌ Здесь нет активной песочницы."
+                return
+            fi
+
+            # Используем -l, чтобы не ругался на открытый nvim
+            sudo umount -l "$PROJECT_ROOT"
+            sudo umount -l "$LOWER_BIND"
+            
+            # Пытаемся очистить мусор. 
+            sudo rm -rf "$BASE_TMP" 2>/dev/null
+            
+            unset SANDBOX_ACTIVE
+            cd .
+            echo "✨ Песочница отключена."
+            ;;
+        *)
+            echo "Usage: sandbox [on|off]"
+            ;;
+    esac
+}
+
+# Функция для проверки статуса песочницы
+function sandbox_status() {
+  # Проверяем переменную или наличие mount в текущей папке
+  if mount | grep -q "on $PWD type overlay"; then
+    echo "%F{yellow}⏳%f"
+  fi
+}
+
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

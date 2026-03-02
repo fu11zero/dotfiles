@@ -1,0 +1,7 @@
+font-size = 10
+background-opacity = 0.8
+theme = Catppuccin Macchiato
+window-inherit-working-directory = false
+
+keybind = ctrl+shift+q=ignore
+keybind = ctrl+enter=ignore

@@ -25,7 +25,7 @@ vim.keymap.set('n', '<C-S-q>', ':BufferLineCloseOthers<CR>')
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "Toggle LazyGit", noremap = true, silent = true })
 
 -- LazySQL
-vim.keymap.set("n", "<leader>ls", "<cmd>LazySql<CR>", { desc = "Toggle LazySql", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ls", function() require("sqlit").open() end, { desc = "Database (sqlit)", noremap = true, silent = true })
 
 -- LazyDocker
 vim.keymap.set("n", "<leader>ld", "<cmd>lua LazyDocker.toggle()<CR>", { desc = "Toggle LazyDocker", noremap = true, silent = true })

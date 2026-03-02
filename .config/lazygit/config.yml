@@ -1,7 +1,7 @@
 git:
-  paging:
-    colorArg: always
-    pager: delta --paging=never --line-numbers --side-by-side
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never --line-numbers --side-by-side
   branchLogCmd: sh -c "git log --graph --color=always --abbrev-commit --decorate --oneline {{branchName}} --"
   allBranchesLogCmds:
     - sh -c "git log --graph --all --color=always --abbrev-commit --decorate --oneline | sed -e 's/\*/●/g' -e 's/|/│/g' -e 's@/@╯@g' -e 's/\\/╮/g'"

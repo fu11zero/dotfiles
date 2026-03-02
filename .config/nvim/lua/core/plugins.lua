@@ -13,7 +13,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	
     {
         "willothy/flatten.nvim",
         config = true,
@@ -24,6 +23,7 @@ require("lazy").setup({
 
     { 'nvim-treesitter/nvim-treesitter' },
 	{ 'neovim/nvim-lspconfig' },
+    { 'jmbuhr/otter.nvim' },
 
 	-- Autocomplete support
 	{ 'hrsh7th/cmp-nvim-lsp' },
@@ -32,7 +32,7 @@ require("lazy").setup({
 	{ 'hrsh7th/cmp-cmdline' },
 	{ 'hrsh7th/nvim-cmp' },
 	{ 'williamboman/mason.nvim' },
-    { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
+    { 'kevinhwang91/nvim-ufo', dependencies = { 'kevinhwang91/promise-async', 'luukvbaal/statuscol.nvim' }},
 
 	{ "nvimtools/hydra.nvim" },
 
@@ -43,7 +43,6 @@ require("lazy").setup({
             'nvim-telescope/telescope-ui-select.nvim'
         }
 	},
-   
     {
         'nat-418/boole.nvim',
         event = "VeryLazy",
@@ -65,7 +64,7 @@ require("lazy").setup({
             })
         end
     },
-    { 
+    {
         'lewis6991/gitsigns.nvim',
         event = "VeryLazy",
         config = function()
@@ -76,7 +75,7 @@ require("lazy").setup({
             }
         end
     },
-    { 
+    {
         'rgroli/other.nvim',
         event = "VeryLazy",
         config = function()
@@ -121,11 +120,11 @@ require("lazy").setup({
                 },
             })
 
-            vim.api.nvim_set_keymap("n", "<leader>gh", "<cmd>:Other html<CR>", { noremap = true, silent = true })
-            vim.api.nvim_set_keymap("n", "<leader>gt", "<cmd>:Other test<CR>", { noremap = true, silent = true })
-            vim.api.nvim_set_keymap("n", "<leader>gs", "<cmd>:Other scss<CR>", { noremap = true, silent = true })
-            vim.api.nvim_set_keymap("n", "<leader>gc", "<cmd>:Other component<CR>", { noremap = true, silent = true })
-            vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>:Other graphql<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "goh", "<cmd>:Other html<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "got", "<cmd>:Other test<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "gos", "<cmd>:Other scss<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "goc", "<cmd>:Other component<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "gog", "<cmd>:Other graphql<CR>", { noremap = true, silent = true })
         end
     },
     {
@@ -139,7 +138,7 @@ require("lazy").setup({
         end
     },
 
-    { 
+    {
         'MeanderingProgrammer/render-markdown.nvim',
         event = "VeryLazy",
     },
@@ -223,24 +222,20 @@ require("lazy").setup({
         end
     },
     {
-        "LostbBlizzard/lazysql.nvim",
-        event = 'VeryLazy',
-        opts = {
-            window = {
-                relative = "editor",
-                position = "50%",
-                size = {
-                    width = "100%",
-                    height = "100%",
-                },
-                border = {
-                    style = "none", -- Set to "none" for true fullscreen or "rounded" for a border
-                },
-            },
-        },
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-        }
+      "Maxteabag/sqlit.nvim",
+      opts = {
+          window = {
+              relative = "editor",
+              position = "50%",
+              size = {
+                  width = "100%",
+                  height = "100%",
+              },
+              border = {
+                  style = "none", -- Set to "none" for true fullscreen or "rounded" for a border
+              },
+          },
+      },
     },
     {
         "crnvl96/lazydocker.nvim",
@@ -295,7 +290,7 @@ require("lazy").setup({
 	    config = function()
 	        -- Configuration goes here.
 	        local g = vim.g
-	
+
 	        g.ale_linters = {
 	        	python = {'mypy'},
 	            lua = {'lua_language_server'}
