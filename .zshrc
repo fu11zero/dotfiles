@@ -263,7 +263,5 @@ function sandbox_status() {
   fi
 }
 
-
-
 # Load Angular CLI autocompletion.
 source <(ng completion script)
