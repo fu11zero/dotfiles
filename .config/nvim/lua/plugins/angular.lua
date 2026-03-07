@@ -48,7 +48,18 @@ local function run(list, command)
   if not node then return end
 
   local target_path = node.type == 'directory' and node.absolute_path or vim.fn.fnamemodify(node.absolute_path, ":h")
-  local relative_path = vim.fn.fnamemodify(target_path, ":."):gsub("^%./", "")
+  local root_file = vim.fs.find({'angular.json', 'nx.json'}, { upward = true, stop = vim.loop.os_homedir(), path = target_path })[1]
+
+  local root_dir
+  local relative_path
+
+  if root_file then
+      root_dir = vim.fn.fnamemodify(root_file, ":h")
+      relative_path = vim.fs.relpath(root_dir, target_path) or ""
+  else
+      root_dir = vim.fn.getcwd()
+      relative_path = vim.fn.fnamemodify(target_path, ":."):gsub("^%./", "")
+  end
 
   -- Используем тему dropdown для маленького окна
   local opts = themes.get_dropdown({
@@ -73,7 +84,7 @@ local function run(list, command)
         local cmd = string.format(command, selection)
 
         -- Открываем терминал вместо невидимого выполнения
-        open_floating_term("cd " .. relative_path .. " && " .. cmd, function()
+        open_floating_term("cd " .. root_dir .. " && " .. cmd .. " --path=" .. relative_path, function()
             api.tree.reload() -- Обновляем дерево после закрытия терминала
         end)
         vim.schedule(function()

@@ -18,8 +18,8 @@ vim.keymap.set('n', '<C-e>', ':NvimTreeFindFile<CR>')
 -- BufferLine
 vim.keymap.set('n','<M-l>', ':BufferLineCycleNext<CR>')
 vim.keymap.set('n','<M-h>', ':BufferLineCyclePrev<CR>')
-vim.keymap.set('n', '<C-q>', ':bdelete <bar> bnext  <CR>')
-vim.keymap.set('n', '<C-S-q>', ':BufferLineCloseOthers<CR>')
+vim.keymap.set('n', '<C-q>', ':bp|bd #<CR>', { silent = true })
+vim.keymap.set('n', '<C-S-Q>', ':BufferLineCloseOthers<CR>')
 
 -- LazyGIT
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "Toggle LazyGit", noremap = true, silent = true })
@@ -37,4 +37,10 @@ vim.keymap.set('n', '<leader>nl', ':TodoTelescope<CR>')
 vim.keymap.set('n', '<leader>fr', vim.lsp.buf.references, {desc = 'Go to references'}) -- Map to find references
 
 -- Edit 
-vim.keymap.set('n', '<leader>cd', vim.lsp.buf.rename, { desc = 'LSP rename' })
+-- vim.keymap.set('n', 'cd', vim.lsp.buf.rename, { desc = 'LSP rename' })
+vim.keymap.set("n", "cd", function()
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true, desc = "LSP rename" })
+
+-- Вставить без перезаписи буфера
+vim.keymap.set("x", "p", "P", { desc = "Вставить без перезаписи буфера" })

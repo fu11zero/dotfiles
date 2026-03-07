@@ -1,7 +1,8 @@
 
 vim.lsp.enable('pyright')
 vim.lsp.config('pyright', {
-	settings = {
+    root_markers = { 'pyproject.toml', 'requirements.txt', 'pyrightconfig.json', '.git' },
+    ettings = {
 	    pyright = {
 	      -- Using Ruff's import organizer
 	      disableOrganizeImports = true,

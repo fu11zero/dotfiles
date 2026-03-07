@@ -22,6 +22,7 @@ require("lazy").setup({
     },
 
     { 'nvim-treesitter/nvim-treesitter' },
+
 	{ 'neovim/nvim-lspconfig' },
     { 'jmbuhr/otter.nvim' },
 
@@ -34,7 +35,8 @@ require("lazy").setup({
 	{ 'williamboman/mason.nvim' },
     { 'kevinhwang91/nvim-ufo', dependencies = { 'kevinhwang91/promise-async', 'luukvbaal/statuscol.nvim' }},
 
-	{ "nvimtools/hydra.nvim" },
+    { "tpope/vim-abolish" },
+    { "nvimtools/hydra.nvim" },
 
     {
 		'nvim-telescope/telescope.nvim', tag = 'v0.2.0',
@@ -63,6 +65,24 @@ require("lazy").setup({
                 }
             })
         end
+    },
+    { "smjonas/inc-rename.nvim", opts = {} },
+    {
+        'stevearc/dressing.nvim',
+        opts = {},
+        config = function()
+            require("inc_rename").setup {
+              input_buffer_type = "dressing",
+            }
+        end
+    },
+    {
+        "3rd/image.nvim",
+        event = "VeryLazy",
+        build = false,
+        opts = {
+            processor = "magick_cli",
+        }
     },
     {
         'lewis6991/gitsigns.nvim',
@@ -141,6 +161,17 @@ require("lazy").setup({
     {
         'MeanderingProgrammer/render-markdown.nvim',
         event = "VeryLazy",
+        config = function ()
+            require('render-markdown').setup({
+                heading = {
+                    backgrounds = {},
+                },
+                code = {
+                    style = 'language',
+                    highlight = 'Normal',
+                },
+            })
+        end
     },
 
     -- {
