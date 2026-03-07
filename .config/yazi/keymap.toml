@@ -17,7 +17,3 @@ desc = "Перейти к смонтированным дискам"
 on  = "M"
 run = "plugin mount"
 
-[[manager.prepend_keymap]]
-on   = [ "<Enter>" ]
-exec = 'shell "$EDITOR" --block --confirm'
-desc = "Open nvim and hide yazi"
