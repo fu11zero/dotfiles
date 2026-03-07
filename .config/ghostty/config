@@ -2,6 +2,7 @@ font-size = 10
 background-opacity = 0.8
 theme = Catppuccin Macchiato
 window-inherit-working-directory = false
+shell-integration = zsh
 
-keybind = ctrl+shift+q=ignore
-keybind = ctrl+enter=ignore
+keybind = ctrl+shift+q=unbind
+keybind = ctrl+enter=unbind
