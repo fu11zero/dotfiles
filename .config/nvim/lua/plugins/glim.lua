@@ -24,5 +24,5 @@ local function open_glim_for_current_project()
 end
 
 -- Bind to a keystroke (e.g., <leader>g)
-vim.keymap.set('n', '<leader>G', open_glim_for_current_project, { desc = "Open Glim for current project" })
+vim.keymap.set('n', '<leader>Gl', open_glim_for_current_project, { desc = "Open Glim for current project" })
 

@@ -21,11 +21,12 @@ require("telescope").load_extension("ui-select")
 
 -- Работа с файлами и буфферами
 vim.keymap.set('n', '<leader><space>', builtin.find_files, {})
-vim.keymap.set('n', '<leader>t', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>f', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>/', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>gb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>gs', builtin.lsp_workspace_symbols, {})
 vim.keymap.set('n', 'gs', function()
-  builtin.lsp_document_symbols({ 
+  builtin.lsp_document_symbols({
       -- symbols = {
       --     'class',
       --     'interface',
@@ -48,5 +49,5 @@ vim.keymap.set('n', '<leader>Gs', builtin.git_status, {desc="Git Status"})
 -- vim.keymap.set('n', '<leader>gP', builtin.git_push, {})
 
 -- Выбор цветовой схемы
-vim.keymap.set('n', '<leader>cs', builtin.colorscheme, {})
+vim.keymap.set('n', '<leader>cs', builtin.colorscheme, {desc = "Change Theme"})
 

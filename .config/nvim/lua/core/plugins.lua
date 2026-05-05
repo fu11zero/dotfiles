@@ -21,10 +21,33 @@ require("lazy").setup({
         priority = 1001,
     },
 
-    { 'nvim-treesitter/nvim-treesitter' },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+        build = ":TSUpdate",
+    },
+
+    {
+        "chrisgrieser/nvim-various-textobjs", event = "VeryLazy",
+        opts = {
+            keymaps = {
+                useDefaults = true,
+            }
+        },
+        keys = {
+            -- Swap 's' for subword (inner/outer)
+            { "is", '<cmd>lua require("various-textobjs").subword("inner")<CR>', mode = { "o", "x" }, desc = "Inner subword" },
+            { "as", '<cmd>lua require("various-textobjs").subword("outer")<CR>', mode = { "o", "x" }, desc = "Outer subword" },
+
+            -- Swap 'S' for sentence (inner/outer)
+            { "iS", '<cmd>lua require("various-textobjs").sentence("inner")<CR>', mode = { "o", "x" }, desc = "Inner sentence" },
+            { "aS", '<cmd>lua require("various-textobjs").sentence("outer")<CR>', mode = { "o", "x" }, desc = "Outer sentence" },
+        },
+    },
 
 	{ 'neovim/nvim-lspconfig' },
     { 'jmbuhr/otter.nvim' },
+
 
 	-- Autocomplete support
 	{ 'hrsh7th/cmp-nvim-lsp' },
@@ -57,7 +80,8 @@ require("lazy").setup({
                 -- Add custom toggle sets (optional)
                 additions = {
                     {'+', '-'},
-                    {'⬜', '✅'}
+                    {'⬜', '✅'},
+                    {'[ ]', '[x]'}
                 },
                 -- Enable case-insensitive matches for specific words
                 allow_caps_additions = {
@@ -141,9 +165,9 @@ require("lazy").setup({
             })
 
             vim.api.nvim_set_keymap("n", "goh", "<cmd>:Other html<CR>", { noremap = true, silent = true })
-            vim.api.nvim_set_keymap("n", "got", "<cmd>:Other test<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "goT", "<cmd>:Other test<CR>", { noremap = true, silent = true })
             vim.api.nvim_set_keymap("n", "gos", "<cmd>:Other scss<CR>", { noremap = true, silent = true })
-            vim.api.nvim_set_keymap("n", "goc", "<cmd>:Other component<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "got", "<cmd>:Other component<CR>", { noremap = true, silent = true })
             vim.api.nvim_set_keymap("n", "gog", "<cmd>:Other graphql<CR>", { noremap = true, silent = true })
         end
     },
@@ -177,41 +201,18 @@ require("lazy").setup({
     -- {
     --   "3rd/diagram.nvim",
     --   dependencies = {
-    --     { "3rd/image.nvim", opts = {} }, -- you'd probably want to configure image.nvim manually instead of doing this
+    --     { "3rd/image.nvim", opts = {} },
     --   },
-    --   opts = { -- you can just pass {}, defaults below
-    --     events = {
-    --       render_buffer = { "InsertLeave", "BufWinEnter", "TextChanged" },
-    --       clear_buffer = {"BufLeave"},
-    --     },
-    --     renderer_options = {
-    --       mermaid = {
-    --         background = nil, -- nil | "transparent" | "white" | "#hex"
-    --         theme = nil, -- nil | "default" | "dark" | "forest" | "neutral"
-    --         scale = 1, -- nil | 1 (default) | 2  | 3 | ...
-    --         width = nil, -- nil | 800 | 400 | ...
-    --         height = nil, -- nil | 600 | 300 | ...
-    --         cli_args = nil, -- nil | { "--no-sandbox" } | { "-p", "/path/to/puppeteer" } | ...
+    --   keys = {
+    --       {
+    --           "K", -- or any key you prefer
+    --           function()
+    --               require("diagram").show_diagram_hover()
+    --           end,
+    --           mode = "n",
+    --           ft = { "markdown", "norg" }, -- Only in these filetypes
+    --           desc = "Show diagram in new tab",
     --       },
-    --       plantuml = {
-    --         charset = nil,
-    --         cli_args = nil, -- nil | { "-Djava.awt.headless=true" } | ...
-    --       },
-    --       d2 = {
-    --         theme_id = nil,
-    --         dark_theme_id = nil,
-    --         scale = nil,
-    --         layout = nil,
-    --         sketch = nil,
-    --         cli_args = nil, -- nil | { "--pad", "0" } | ...
-    --       },
-    --       gnuplot = {
-    --         size = nil, -- nil | "800,600" | ...
-    --         font = nil, -- nil | "Arial,12" | ...
-    --         theme = nil, -- nil | "light" | "dark" | custom theme string
-    --         cli_args = nil, -- nil | { "-p" } | { "-c", "config.plt" } | ...
-    --       },
-    --     }
     --   },
     -- },
 
@@ -253,20 +254,11 @@ require("lazy").setup({
         end
     },
     {
-      "Maxteabag/sqlit.nvim",
-      opts = {
-          window = {
-              relative = "editor",
-              position = "50%",
-              size = {
-                  width = "100%",
-                  height = "100%",
-              },
-              border = {
-                  style = "none", -- Set to "none" for true fullscreen or "rounded" for a border
-              },
-          },
-      },
+      "LostbBlizzard/lazysql.nvim",
+      opts = {},
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+      }
     },
     {
         "crnvl96/lazydocker.nvim",
@@ -351,24 +343,14 @@ require("lazy").setup({
 
 	{'akinsho/toggleterm.nvim', version = "*", config = true},
 
-	{
-	  "folke/which-key.nvim",
-	  event = "VeryLazy",
-	  init = function()
-	    vim.o.timeout = true
-	    vim.o.timeoutlen = 300
-	  end,
-	  opts = {
-	    -- your configuration comes here
-	    -- or leave it empty to use the default settings
-	    -- refer to the configuration section below
-	  }
-	},
+	{ "folke/which-key.nvim", event = "VeryLazy" },
 
 	-- Выравнивание и перемещение текста
 	-- Автоматическое открытие фигурных скобок, кавычек и т.д
 	{ 'echasnovski/mini.nvim', version = false },
 	{ 'echasnovski/mini.move', version = false },
 	{ 'echasnovski/mini.pairs', version = false },
+
+    { "nickjvandyke/opencode.nvim", version = "*" },
 
 })

@@ -1,18 +1,17 @@
 
 function SetColor()
-	-- Option 1
-	-- vim.o.background = "dark"
-	-- vim.cmd([[colorscheme gruvbox]])	
 
-	-- Option 2
-	vim.cmd.colorscheme "catppuccin-macchiato"
+    require("catppuccin").setup({
+        transparent_background = true, -- включает прозрачность для всех стандартных групп
+    })
+    vim.cmd.colorscheme "catppuccin-macchiato"
 
     local groups = {
         "Normal", "NormalFloat", "NormalNC", "SignColumn",
         "MsgArea", "Pmenu", "PmenuSel", "FloatBorder",
         "TreesitterContext", "TreesitterContextLineNumber",
         "LineNr", "CursorLineNr", "FoldColumn", "StatusLine",
-        "NvimTreeNormal"
+        "NvimTreeNormal", "Terminal"
     }
 
     for _, group in ipairs(groups) do

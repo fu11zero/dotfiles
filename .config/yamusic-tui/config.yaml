@@ -4,7 +4,7 @@ rewind-duration-s: 5
 volume: 1
 volume-step: 0.05
 suppress-errors: false
-show-lyrics: false
+show-lyrics: true
 cache-tracks: likes
 cache-dir: Music/Yandex
 search:
@@ -22,12 +22,14 @@ controls:
     playlists-up: pgup
     playlists-down: pgdown
     playlists-rename: c
+    playlists-hide: ctrl+b
     tracks-like: f
     tracks-add-to-playlist: a
     tracks-remove-from-playlist: shift+a
     tracks-share: ctrl+s
     tracks-shuffle: ctrl+x
     tracks-search: /
+    tracks-hide: ctrl+t
     player-pause: ' '
     player-next: "n"
     player-previous: p
@@ -38,3 +40,14 @@ controls:
     player-vol-up: +,=
     player-vol-down: '-'
     player-toggle-lyrics: t
+    player-hide: ctrl+p
+colors:
+    accent: '#FC0'
+    error: '#F33'
+    background: '#6b6b6b'
+    active-text: '#EEE'
+    normal-text: '#CCC'
+    inactive-text: '#888'
+    lyrics-previous: '#444'
+    lyrics-current: '#EEE'
+    lyrics-next: '#777'

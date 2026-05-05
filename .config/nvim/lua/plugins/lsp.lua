@@ -1,3 +1,18 @@
+-- vim.lsp.jsonls.setup {
+--   settings = {
+--     json = {
+--       -- schemas = require('schemastore').json.schemas(),
+--       -- validate = { enable = true },
+--     },
+--   },
+-- }
+
+-- Настройка параметров для Phpactor
+vim.lsp.config('phpactor', {
+    cmd = { 'phpactor', 'language-server' },
+    root_markers = { 'composer.json', '.git', 'index.php' },
+})
+vim.lsp.enable('phpactor')
 
 vim.lsp.enable('pyright')
 vim.lsp.config('pyright', {
@@ -49,7 +64,7 @@ vim.lsp.config('graphql', {
     params.processId = vim.NIL
   end,
   settings = {
-    ['graphql-config.load.baseDir'] = vim.fn.getcwd(), -- Forces the LS to look here
+    -- [[ 'graphql-config.load.baseDir' ]] = vim.fn.getcwd(), -- Forces the LS to look here
     ['graphql-config.load.legacy'] = true,             -- Helps if your config format is older
   }
 })

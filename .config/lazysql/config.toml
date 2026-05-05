@@ -4,7 +4,9 @@ ConfigFile = '/home/fullzero/.config/lazysql/config.toml'
 DefaultPageSize = 300
 DisableSidebar = true
 SidebarOverlay = false
-MaxQueryHistoryPerConnection = 100
+MaxQueryHistoryPerConnection = 300
+TreeWidth = 30
+JSONViewerWordWrap = false
 
 [[database]]
 Name = 'vrp'
@@ -17,6 +19,7 @@ Port = ''
 DBName = 'postgres'
 URLParams = ''
 ReadOnly = false
+Schemas = ['public']
 Commands = []
 
 [[database]]
@@ -30,4 +33,36 @@ Port = ''
 DBName = 'postgres'
 URLParams = ''
 ReadOnly = false
+Schemas = ['public']
 Commands = []
+
+[[database]]
+Name = 'startup.local'
+URL = 'pgsql://startup:startup-factory@127.0.0.1:25432/startup?sslmode=disable'
+Provider = 'postgres'
+Username = ''
+Password = ''
+Hostname = ''
+Port = ''
+DBName = 'startup'
+URLParams = ''
+ReadOnly = false
+Schemas = ['public']
+Commands = []
+
+[[database]]
+Name = 'startup.dev'
+URL = 'pgsql://app-user:ZlmsaOKBGwhgh7rjpZJ2@localhost:${port}/postgres?sslmode=disable'
+Provider = 'postgres'
+Username = ''
+Password = ''
+Hostname = ''
+Port = ''
+DBName = 'postgres'
+URLParams = ''
+ReadOnly = false
+Schemas = ['public']
+Commands = [
+    { Command = 'ssh -tt -L ${port}:backend-dev-postgres-service.apc-startup-factory.svc.cluster.local:5432 -p 30022 root@k8s.unitcode.dev', WaitForPort = '${port}' }
+]
+
