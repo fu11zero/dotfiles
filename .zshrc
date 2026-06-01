@@ -52,7 +52,7 @@ ZSH_THEME="fullzero"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -74,7 +74,6 @@ plugins=(
   git
   ng
   npm
-  node-bin
   pip
   #pyenv
   #autoenv
@@ -263,5 +262,5 @@ function sandbox_status() {
   fi
 }
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+# Angular CLI autocompletion (disabled - slows down shell startup and tab-completion)
+# source <(ng completion script)
