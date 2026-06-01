@@ -352,5 +352,4 @@ require("lazy").setup({
 	{ 'echasnovski/mini.pairs', version = false },
 
     { "nickjvandyke/opencode.nvim", version = "*" },
-
 })

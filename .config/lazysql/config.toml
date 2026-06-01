@@ -37,6 +37,34 @@ Schemas = ['public']
 Commands = []
 
 [[database]]
+Name = 'universities.local'
+URL = 'pgsql://universities:universities@127.0.0.1:45432/universities?sslmode=disable'
+Provider = 'postgres'
+Username = ''
+Password = ''
+Hostname = ''
+Port = ''
+DBName = 'universities'
+URLParams = ''
+ReadOnly = false
+Schemas = ['public']
+Commands = []
+
+[[database]]
+Name = 'universities.parser.local'
+URL = 'pgsql://parser:parser@127.0.0.1:65432/parser?sslmode=disable'
+Provider = 'postgres'
+Username = ''
+Password = ''
+Hostname = ''
+Port = ''
+DBName = 'parser'
+URLParams = ''
+ReadOnly = false
+Schemas = ['public']
+Commands = []
+
+[[database]]
 Name = 'startup.local'
 URL = 'pgsql://startup:startup-factory@127.0.0.1:25432/startup?sslmode=disable'
 Provider = 'postgres'
@@ -64,5 +92,21 @@ ReadOnly = false
 Schemas = ['public']
 Commands = [
     { Command = 'ssh -tt -L ${port}:backend-dev-postgres-service.apc-startup-factory.svc.cluster.local:5432 -p 30022 root@k8s.unitcode.dev', WaitForPort = '${port}' }
+]
+
+[[database]]
+Name = 'startup.test'
+URL = 'pgsql://startup_factory:s7AXtKOWqNN6LX@localhost:${port}/startup_factory?sslmode=disable'
+Provider = 'postgres'
+Username = ''
+Password = ''
+Hostname = ''
+Port = ''
+DBName = 'startup_factory'
+URLParams = ''
+ReadOnly = false
+Schemas = []
+Commands = [
+    { Command = 'ssh -tt -L ${port}:10.11.61.31:5432 apc.ts3', WaitForPort = '${port}' }
 ]
 
