@@ -314,9 +314,10 @@ require("lazy").setup({
 	        -- Configuration goes here.
 	        local g = vim.g
 
-	        g.ale_linters = {
+            g.ale_linters = {
 	        	python = {'mypy'},
-	            lua = {'lua_language_server'}
+	            lua = {'lua_language_server'},
+	            php = {},
 	        }
 	    end
 	},

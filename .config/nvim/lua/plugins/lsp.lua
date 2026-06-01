@@ -7,11 +7,6 @@
 --   },
 -- }
 
--- Настройка параметров для Phpactor
-vim.lsp.config('phpactor', {
-    cmd = { 'phpactor', 'language-server' },
-    root_markers = { 'composer.json', '.git', 'index.php' },
-})
 vim.lsp.enable('phpactor')
 
 vim.lsp.enable('pyright')
