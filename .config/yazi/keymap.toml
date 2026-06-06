@@ -14,6 +14,21 @@ run = 'cd /mnt/data'
 desc = "Перейти к диску D:"
 
 [[mgr.prepend_keymap]]
+on   = [ "G" ]
+run  = "plugin gvfs"
+desc = "Вызвать меню gvfs"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "n" ]
+run  = "plugin gvfs --args='network://'"
+desc = "Открыть Сетевое окружение"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "s" ]
+run  = "plugin gvfs --args='smb://'"
+desc = "Открыть Samba/Windows сеть"
+
+[[mgr.prepend_keymap]]
 on = [ "g", "m" ]
 run = 'cd /run/media/fullzero'
 desc = "Перейти к смонтированным дискам"

@@ -11,8 +11,8 @@ vim.keymap.set('n', '<leader>cc', '<cmd>:quitall<CR>', { desc = "Quit" })
 -- vim.keymap.set('n', '<C-s>', '<cmd>:w<CR>')
 
 -- NvimTree
-vim.keymap.set('n', '<leader>T', ':NvimTreeToggle<CR>')
 vim.keymap.set('n', '<C-e>', ':NvimTreeFindFile<CR>')
+vim.keymap.set('n', '<C-E>', ':NvimTreeToggle<CR>')
 -- vim.keymap.set('n', '<leader>t', '<C-w> p', { desc = 'Go to previous window' })  
 
 -- BufferLine
