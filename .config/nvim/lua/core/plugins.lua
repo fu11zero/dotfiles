@@ -156,6 +156,7 @@ require("lazy").setup({
             require('render-markdown').setup({
                 heading = { backgrounds = {} },
                 code = { style = 'language', highlight = 'Normal' },
+                anti_conceal = { enabled = false },
             })
         end
     },
