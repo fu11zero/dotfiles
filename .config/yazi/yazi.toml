@@ -1,2 +1,27 @@
 [mgr]
 linemode = "size" 
+
+[opener]
+meshroom-frames = [
+    { run = 'yazi-video-to-frames "$1"', block = false, desc = "Разбить на кадры для Meshroom" }
+]
+
+extract-here = [
+    { run = 'ouch decompress "$@" -o .', block = true, desc = "Распаковать в текущую папку" }
+]
+
+mpv-player = [
+    { run = 'mpv "$@"', orphan = true, desc = "Открыть в MPV" }
+]
+
+[open]
+prepend_rules = [
+    { mime = "video/*", use = [ "play", "mpv-player", "meshroom-frames" ], append=true },
+
+    # Для АРХИВОВ (zip, tar, rar, 7z)
+    { mime = "application/*archive", use = [ "extract-here", "extract" ] },
+    { mime = "application/zip", use = [ "extract-here", "extract" ] },
+    { mime = "application/x-tar", use = [ "extract-here", "extract" ] },
+    { mime = "application/x-7z-compressed", use = [ "extract-here", "extract" ] },
+
+]

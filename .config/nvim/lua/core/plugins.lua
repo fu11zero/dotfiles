@@ -353,4 +353,13 @@ require("lazy").setup({
 	{ 'echasnovski/mini.pairs', version = false },
 
     { "nickjvandyke/opencode.nvim", version = "*" },
+
+    {
+      "folke/snacks.nvim",
+      priority = 1000,
+      lazy = false,
+      ---@type snacks.Config
+      opts = {
+      },
+    }
 })

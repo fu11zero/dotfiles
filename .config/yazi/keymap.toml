@@ -14,7 +14,7 @@ run = 'cd /mnt/data'
 desc = "Перейти к диску D:"
 
 [[mgr.prepend_keymap]]
-on   = [ "G" ]
+on   = [ "N" ]
 run  = "plugin gvfs"
 desc = "Вызвать меню gvfs"
 
@@ -34,8 +34,32 @@ run = 'cd /run/media/fullzero'
 desc = "Перейти к смонтированным дискам"
 
 [[mgr.prepend_keymap]]
-on  = "M"
+on  = ["M", "M"]
 run = "plugin mount"
+
+[[mgr.prepend_keymap]]
+on   = ["M", "G"]
+run  = "plugin gvfs --args=''"
+desc = "Открыть меню GVFS"
+[[mgr.prepend_keymap]]
+on = [ "M", "m" ]
+run = "plugin gvfs -- select-then-mount --jump"
+desc = "Монтировать устройство и перейти в него"
+
+[[mgr.prepend_keymap]]
+on = [ "M", "u" ]
+run = "plugin gvfs -- select-then-unmount --eject"
+desc = "Размонтировать и извлечь устройство"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "m" ]
+run = "plugin gvfs -- jump-to-device"
+desc = "Перейти к смонтированному устройству"
+    
+[[mgr.prepend_keymap]]
+on = [ "`", "`" ]
+run = "plugin gvfs -- jump-back-prev-cwd"
+desc = "Вернуться назад"
 
 [[mgr.prepend_keymap]]
 on   = [ "A", "a", "a" ]
@@ -61,3 +85,8 @@ desc = "Archive selected files (compression level)"
 on   = [ "A", "a", "u" ]
 run  = "plugin compress -phl"
 desc = "Archive selected files (password+header+level)"
+
+[[mgr.prepend_keymap]]
+on   = [ "e", "f" ]
+run  = 'shell "yazi-video-to-frames \"$1\"" --block=false'
+desc = "Конвертировать видео в кадры для Meshroom"

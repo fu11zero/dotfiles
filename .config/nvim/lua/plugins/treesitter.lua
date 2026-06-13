@@ -27,11 +27,42 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.filetype.add({
+  pattern = {
+    [".*/[Ss]cripts/.*%.c"] = "enforce",
+  },
+})
+
+local success, ts_install = pcall(require, "nvim-treesitter.install")
+if success then
+  -- Для новой распределенной модели nvim-treesitter
+  require("nvim-treesitter.parsers").get_parser_configs = function()
+    -- Заглушка на случай, если какой-то старый код её дернет
+    return {}
+  end
+
+  -- Напрямую прокидываем конфигурацию в список доступных для компиляции
+  local parsers = require("nvim-treesitter.parsers")
+  parsers.enforce = {
+    install_info = {
+      url = "https://github.com",
+      files = { "src/parser.c" },
+      branch = "main",
+    },
+    filetype = "enforce",
+  }
+else
+  -- Запасной вариант нативного API Neovim 0.12, если плагин не загружен
+  vim.treesitter.language.add("enforce", {
+    url = "https://github.com",
+  })
+end
 
 require('nvim-treesitter').setup {
 
     ensure_installed = {
         "ecma",
+        "enforce",
         "jsx",
         "html_tags",
         "bash",

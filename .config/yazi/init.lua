@@ -1,0 +1,2 @@
+require("gvfs"):setup({
+})
