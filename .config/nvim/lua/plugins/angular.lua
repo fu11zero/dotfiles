@@ -1,3 +1,7 @@
+-- [[ DISABLED - requires telescope + nvim-tree + toggleterm ]]
+-- To re-enable, uncomment in init.lua and add those plugins back to plugins.lua
+-- See init.lua line: require('plugins.angular')
+
 local M = {}
 
 -- Вспомогательная функция для создания плавающего терминала

@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
@@ -16,7 +16,6 @@ require("lazy").setup({
     {
         "willothy/flatten.nvim",
         config = true,
-        -- Ensure that it runs first to minimize delay when opening file from terminal
         lazy = false,
         priority = 1001,
     },
@@ -27,47 +26,25 @@ require("lazy").setup({
         build = ":TSUpdate",
     },
 
-    {
-        "chrisgrieser/nvim-various-textobjs", event = "VeryLazy",
-        opts = {
-            keymaps = {
-                useDefaults = true,
-            }
-        },
-        keys = {
-            -- Swap 's' for subword (inner/outer)
-            { "is", '<cmd>lua require("various-textobjs").subword("inner")<CR>', mode = { "o", "x" }, desc = "Inner subword" },
-            { "as", '<cmd>lua require("various-textobjs").subword("outer")<CR>', mode = { "o", "x" }, desc = "Outer subword" },
-
-            -- Swap 'S' for sentence (inner/outer)
-            { "iS", '<cmd>lua require("various-textobjs").sentence("inner")<CR>', mode = { "o", "x" }, desc = "Inner sentence" },
-            { "aS", '<cmd>lua require("various-textobjs").sentence("outer")<CR>', mode = { "o", "x" }, desc = "Outer sentence" },
-        },
-    },
-
-	{ 'neovim/nvim-lspconfig' },
+    { 'neovim/nvim-lspconfig' },
     { 'jmbuhr/otter.nvim' },
 
-
-	-- Autocomplete support
-	{ 'hrsh7th/cmp-nvim-lsp' },
-	{ 'hrsh7th/cmp-buffer' },
-	{ 'hrsh7th/cmp-path' },
-	{ 'hrsh7th/cmp-cmdline' },
-	{ 'hrsh7th/nvim-cmp' },
-	{ 'williamboman/mason.nvim' },
+    -- Autocomplete
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-path' },
+    { 'hrsh7th/cmp-cmdline' },
+    { 'hrsh7th/nvim-cmp' },
+    { 'williamboman/mason.nvim' },
     { 'kevinhwang91/nvim-ufo', dependencies = { 'kevinhwang91/promise-async', 'luukvbaal/statuscol.nvim' }},
 
     { "tpope/vim-abolish" },
     { "nvimtools/hydra.nvim" },
 
-    {
-		'nvim-telescope/telescope.nvim', tag = 'v0.2.0',
-		dependencies = {
-            'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope-ui-select.nvim'
-        }
-	},
+    -- { 'nvim-telescope/telescope.nvim', tag = 'v0.2.0',
+    --   dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-ui-select.nvim' }
+    -- },
+
     {
         'nat-418/boole.nvim',
         event = "VeryLazy",
@@ -77,48 +54,51 @@ require("lazy").setup({
                     increment = '<C-a>',
                     decrement = '<C-x>'
                 },
-                -- Add custom toggle sets (optional)
                 additions = {
                     {'+', '-'},
                     {'⬜', '✅'},
                     {'[ ]', '[x]'}
                 },
-                -- Enable case-insensitive matches for specific words
                 allow_caps_additions = {
-                    {'enable', 'disable'} -- Toggles enable -> disable, Enable -> Disable, etc.
+                    {'enable', 'disable'}
                 }
             })
         end
     },
-    { "smjonas/inc-rename.nvim", opts = {} },
-    {
-        'stevearc/dressing.nvim',
-        opts = {},
-        config = function()
-            require("inc_rename").setup {
-              input_buffer_type = "dressing",
-            }
-        end
-    },
-    {
-        "3rd/image.nvim",
-        event = "VeryLazy",
-        build = false,
-        opts = {
-            processor = "magick_cli",
-        }
-    },
-    {
-        'lewis6991/gitsigns.nvim',
-        event = "VeryLazy",
-        config = function()
-            require('gitsigns').setup {
-              current_line_blame = true,
-              current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
-              max_file_length = 40000, -- Disable if file is longer than this (in lines)
-            }
-        end
-    },
+
+    -- { "smjonas/inc-rename.nvim", opts = {} },
+
+    -- {
+    --     'stevearc/dressing.nvim',
+    --     opts = {},
+    --     config = function()
+    --         require("inc_rename").setup {
+    --             input_buffer_type = "dressing",
+    --         }
+    --     end
+    -- },
+
+    -- {
+    --     "3rd/image.nvim",
+    --     event = "VeryLazy",
+    --     build = false,
+    --     opts = {
+    --         processor = "magick_cli",
+    --     }
+    -- },
+
+    -- {
+    --     'lewis6991/gitsigns.nvim',
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require('gitsigns').setup {
+    --             current_line_blame = true,
+    --             current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
+    --             max_file_length = 40000,
+    --         }
+    --     end
+    -- },
+
     {
         'rgroli/other.nvim',
         event = "VeryLazy",
@@ -132,35 +112,24 @@ require("lazy").setup({
             }
             require('other-nvim').setup({
                 mappings = {
-                    -- "livewire",
-                    -- "angular",
                     {
                         pattern = "/(.*)/(.*)/([^/]+)%.ts$",
                         target = componentTargets,
                     },
-                    -- Mapping for HTML files
                     {
                         pattern = "/(.*)/(.*)/([^/]+)%.html$",
                         target = componentTargets,
                     },
-                    -- Mapping for SCSS files
                     {
                         pattern = "/(.*)/(.*)/([^/]+)%.scss$",
                         target = componentTargets,
                     },
-                    -- Mapping for GraphQL files
                     {
                         pattern = "/(.*)/(.*)/([^/]+)%.gql$",
                         target = componentTargets,
                     },
                     "laravel",
-                    -- "rails",
-                    -- "golang",
                     "python",
-                    -- "react",
-                    -- "rust",
-                    -- "elixir",
-                    -- "clojure",
                 },
             })
 
@@ -176,9 +145,7 @@ require("lazy").setup({
         version = "^3.0.0",
         event = "VeryLazy",
         config = function()
-            require("nvim-surround").setup({
-
-            })
+            require("nvim-surround").setup({})
         end
     },
 
@@ -187,13 +154,8 @@ require("lazy").setup({
         event = "VeryLazy",
         config = function ()
             require('render-markdown').setup({
-                heading = {
-                    backgrounds = {},
-                },
-                code = {
-                    style = 'language',
-                    highlight = 'Normal',
-                },
+                heading = { backgrounds = {} },
+                code = { style = 'language', highlight = 'Normal' },
             })
         end
     },
@@ -203,62 +165,37 @@ require("lazy").setup({
     --   dependencies = {
     --     { "3rd/image.nvim", opts = {} },
     --   },
-    --   keys = {
-    --       {
-    --           "K", -- or any key you prefer
-    --           function()
-    --               require("diagram").show_diagram_hover()
-    --           end,
-    --           mode = "n",
-    --           ft = { "markdown", "norg" }, -- Only in these filetypes
-    --           desc = "Show diagram in new tab",
-    --       },
-    --   },
+    --   keys = { ... },
+    -- },
+
+    -- {
+    --     "wellle/targets.vim",
+    -- },
+
+    -- {
+    --   'nvimdev/dashboard-nvim',
+    --   event = 'VimEnter',
+    --   config = function()
+    --     require('dashboard').setup {}
+    --   end,
+    --   dependencies = { {'nvim-tree/nvim-web-devicons'}}
+    -- },
+
+    -- {
+    --     "kdheepak/lazygit.nvim",
+    --     event = 'VeryLazy',
+    --     cmd = { "LazyGit", "LazyGitConfig", "LazyGitCurrentFile", "LazyGitFilter", "LazyGitFilterCurrentFile" },
+    --     config = function()
+    --         vim.g.lazygit_floating_window_scaling_factor = 1.0
+    --         vim.g.lazygit_floating_window_border_chars = "none"
+    --         vim.g.lazygit_floating_window_use_plenary = 0
+    --     end
     -- },
 
     {
-        "wellle/targets.vim",
-    },
-
-    {
-	  'nvimdev/dashboard-nvim',
-	  event = 'VimEnter',
-	  config = function()
-	    require('dashboard').setup {
-	      -- config
-	    }
-	  end,
-	  dependencies = { {'nvim-tree/nvim-web-devicons'}}
-	},
-
-    {
-        "kdheepak/lazygit.nvim",
-        event = 'VeryLazy',
-        cmd = {
-            "LazyGit",
-            "LazyGitConfig",
-            "LazyGitCurrentFile",
-            "LazyGitFilter",
-            "LazyGitFilterCurrentFile",
-        },
-        keys = {
-        },
-        config = function()
-            -- 1.0 is full screen, 0.9 is 90% of the editor size
-            vim.g.lazygit_floating_window_scaling_factor = 1.0 
-
-            -- Optional: Border style ("none", "single", "double", "rounded", "solid", "shadow")
-            -- vim.g.lazygit_floating_window_border_chars = {'╭','─', '╮', '│', '╯','─', '╰', '│'}
-            vim.g.lazygit_floating_window_border_chars = "none"
-            vim.g.lazygit_floating_window_use_plenary = 0 -- use builtin neovim windowing
-        end
-    },
-    {
       "LostbBlizzard/lazysql.nvim",
       opts = {},
-      dependencies = {
-        "MunifTanjim/nui.nvim",
-      }
+      dependencies = { "MunifTanjim/nui.nvim" }
     },
     {
         "crnvl96/lazydocker.nvim",
@@ -267,90 +204,73 @@ require("lazy").setup({
         dependencies = { }
     },
 
-	{ 'Eandrju/cellular-automaton.nvim' },
-	{ 'norcalli/nvim-colorizer.lua' },
+    { 'Eandrju/cellular-automaton.nvim' },
+    { 'norcalli/nvim-colorizer.lua' },
 
-	{
-	    'nvim-lualine/lualine.nvim',
-	    dependencies = { 'nvim-tree/nvim-web-devicons' }
-	},
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
 
-	{
-	  "folke/todo-comments.nvim",
-	  dependencies = { "nvim-lua/plenary.nvim" },
-	  opts = {
-	    -- your configuration comes here
-	    -- or leave it empty to use the default settings
-	    -- refer to the configuration section below
-	  }
-	},
+    {
+      "folke/todo-comments.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      opts = {}
+    },
 
-	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
+    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    {
+        'numToStr/Comment.nvim',
+        opts = {},
+        lazy = false,
+    },
 
-	{
-	    'numToStr/Comment.nvim',
-	    opts = {
-	        -- add any options here
-	    },
-	    lazy = false,
-	},
+    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 
-	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+    -- {
+    --   "nvim-tree/nvim-tree.lua",
+    --   version = "*",
+    --   lazy = false,
+    --   dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- },
 
-	{
-	  "nvim-tree/nvim-tree.lua",
-	  version = "*",
-	  lazy = false,
-	  dependencies = {
-	    "nvim-tree/nvim-web-devicons",
-	  },
-	},
-
-	{
-	    'dense-analysis/ale',
-	    config = function()
-	        -- Configuration goes here.
-	        local g = vim.g
-
+    {
+        'dense-analysis/ale',
+        config = function()
+            local g = vim.g
             g.ale_linters = {
-	        	python = {'mypy'},
-	            lua = {'lua_language_server'},
-	            php = {},
-	        }
-	    end
-	},
+                python = {'mypy'},
+                lua = {'lua_language_server'},
+                php = {},
+            }
+        end
+    },
 
-	{ 'RRethy/vim-illuminate' },
+    -- { 'RRethy/vim-illuminate' },
 
-	{
-	    "vhyrro/luarocks.nvim",
-	    priority = 1001, -- this plugin needs to run before anything else
-	    opts = {
-	        rocks = { "magick" },
-	    },
-	},
+    {
+        "vhyrro/luarocks.nvim",
+        priority = 1001,
+        opts = {
+            rocks = { "magick" },
+        },
+    },
 
-	{
-	 "folke/trouble.nvim",
-	 dependencies = { "nvim-tree/nvim-web-devicons" },
-	 opts = {
-	  -- your configuration comes here
-	  -- or leave it empty to use the default settings
-	  -- refer to the configuration section below
-	 },
-	},
+    {
+     "folke/trouble.nvim",
+     dependencies = { "nvim-tree/nvim-web-devicons" },
+     opts = {},
+    },
 
-	{'akinsho/toggleterm.nvim', version = "*", config = true},
+    -- { 'akinsho/toggleterm.nvim', version = "*", config = true },
 
-	{ "folke/which-key.nvim", event = "VeryLazy" },
+    { "folke/which-key.nvim", event = "VeryLazy" },
 
-	-- Выравнивание и перемещение текста
-	-- Автоматическое открытие фигурных скобок, кавычек и т.д
-	{ 'echasnovski/mini.nvim', version = false },
-	{ 'echasnovski/mini.move', version = false },
-	{ 'echasnovski/mini.pairs', version = false },
+    { 'echasnovski/mini.nvim', version = false },
+    { 'echasnovski/mini.move', version = false },
+    { 'echasnovski/mini.pairs', version = false },
 
     { "nickjvandyke/opencode.nvim", version = "*" },
 
@@ -360,6 +280,88 @@ require("lazy").setup({
       lazy = false,
       ---@type snacks.Config
       opts = {
+        bigfile = { enabled = true },
+        dashboard = { enabled = true },
+        explorer = { enabled = true },
+        indent = { enabled = true },
+        input = { enabled = true },
+        picker = { enabled = true },
+        notifier = { enabled = true },
+        quickfile = { enabled = true },
+        scope = { enabled = true },
+        scroll = { enabled = true },
+        statuscolumn = { enabled = true },
+        words = { enabled = true },
+        lazygit = { enabled = true },
+        terminal = { enabled = true },
+        image = {
+          enabled = true,
+          processor = "magick_cli",
+          formats = { "png", "jpg", "jpeg", "gif", "bmp", "webp", "tiff", "heic", "avif", "mp4", "mov", "avi", "mkv", "webm", "pdf", "icns" },
+        },
+        bufdelete = { enabled = true },
+        git = { enabled = true },
+        gitbrowse = { enabled = true },
+        rename = { enabled = true },
+        zen = { enabled = true },
+        animate = { enabled = true },
+        dim = { enabled = true },
+        keymap = { enabled = true },
+        toggle = { enabled = true },
+        win = { enabled = true },
       },
+      keys = {
+        { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+        { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
+        { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
+        { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
+        { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
+        { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
+        { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
+        { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
+        { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
+        { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
+        { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
+        { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
+        { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
+        { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
+        { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
+        { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
+        { "<leader>sc", function() Snacks.picker.command_history() end, desc = "Command History" },
+        { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+        { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
+        { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
+        { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
+        { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
+        { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
+        { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+        { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+        { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+        { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
+        { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
+        { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+        { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
+        { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+        { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
+        { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
+        { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+        { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+        { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
+        { "]]",         function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
+        { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
+      },
+      init = function()
+        vim.api.nvim_create_autocmd("User", {
+          pattern = "VeryLazy",
+          callback = function()
+            _G.dd = function(...)
+              Snacks.debug.inspect(...)
+            end
+            _G.bt = function()
+              Snacks.debug.backtrace()
+            end
+          end,
+        })
+      end,
     }
 })

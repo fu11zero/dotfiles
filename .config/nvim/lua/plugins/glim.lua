@@ -1,28 +1,21 @@
 
-local Terminal = require('toggleterm.terminal').Terminal
+-- [[ DISABLED - requires toggleterm which is replaced by snacks.terminal ]]
+-- To re-enable, uncomment 'require("plugins.glim")' in init.lua
+-- and add toggleterm back to plugins.lua
 
-local function open_glim_for_current_project()
-  -- Get the name of the current working directory
-  local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+-- local Terminal = require('toggleterm.terminal').Terminal
 
-  -- Create the terminal instance
-  -- Glim doesn't have a direct 'filter' CLI flag, so we use its interactive
-  -- search if available, or just open it in the current dir.
-  local glim_term = Terminal:new({
-    cmd = "glim",
-    dir = vim.fn.getcwd(),
-    direction = "float",
-    close_on_exit = true,
-    float_opts = {
-      border = "none",
-    },
-    -- Optional: If glim supports a search argument in future versions, 
-    -- you would append it to 'cmd' here.
-  })
+-- local function open_glim_for_current_project()
+--   local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+--   local glim_term = Terminal:new({
+--     cmd = "glim",
+--     dir = vim.fn.getcwd(),
+--     direction = "float",
+--     close_on_exit = true,
+--     float_opts = { border = "none" },
+--   })
+--   glim_term:toggle()
+-- end
 
-  glim_term:toggle()
-end
-
--- Bind to a keystroke (e.g., <leader>g)
-vim.keymap.set('n', '<leader>Gl', open_glim_for_current_project, { desc = "Open Glim for current project" })
+-- vim.keymap.set('n', '<leader>Gl', open_glim_for_current_project, { desc = "Open Glim for current project" })
 

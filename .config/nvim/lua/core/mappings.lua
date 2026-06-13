@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 -- Quit
 vim.keymap.set('n', '<leader>cc', '<cmd>:quitall<CR>', { desc = "Quit" })
 
@@ -10,10 +8,9 @@ vim.keymap.set('n', '<leader>cc', '<cmd>:quitall<CR>', { desc = "Quit" })
 -- vim.keymap.set('i', '<C-s>', '<cmd>:w<CR>')
 -- vim.keymap.set('n', '<C-s>', '<cmd>:w<CR>')
 
--- NvimTree
-vim.keymap.set('n', '<C-e>', ':NvimTreeFindFile<CR>')
-vim.keymap.set('n', '<C-S-E>', ':NvimTreeToggle<CR>')
--- vim.keymap.set('n', '<leader>t', '<C-w> p', { desc = 'Go to previous window' })  
+-- Snacks Explorer (replaces NvimTree)
+vim.keymap.set('n', '<C-e>', function() Snacks.explorer.reveal() end, { desc = 'Reveal in Explorer' })
+vim.keymap.set('n', '<C-S-E>', function() Snacks.explorer() end, { desc = 'Toggle Explorer' })
 
 -- BufferLine
 vim.keymap.set('n','<M-l>', ':BufferLineCycleNext<CR>')
@@ -21,8 +18,8 @@ vim.keymap.set('n','<M-h>', ':BufferLineCyclePrev<CR>')
 vim.keymap.set('n', '<C-q>', ':bp|bd #<CR>', { silent = true })
 vim.keymap.set('n', '<C-S-Q>', ':BufferLineCloseOthers<CR>')
 
--- LazyGIT
-vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "Toggle LazyGit", noremap = true, silent = true })
+-- LazyGIT (via snacks)
+vim.keymap.set("n", "<leader>lg", function() Snacks.lazygit() end, { desc = "Toggle LazyGit", noremap = true, silent = true })
 
 -- LazySQL
 vim.keymap.set("n", "<leader>ls", "<cmd>LazySql<CR>", { desc = "Database LazySQL", noremap = true, silent = true })
@@ -36,11 +33,8 @@ vim.keymap.set('n', '<leader>nl', ':TodoTelescope<CR>')
 -- Show references
 vim.keymap.set('n', '<leader>fr', vim.lsp.buf.references, {desc = 'Go to references'}) -- Map to find references
 
--- Edit 
--- vim.keymap.set('n', 'cd', vim.lsp.buf.rename, { desc = 'LSP rename' })
-vim.keymap.set("n", "cd", function()
-  return ":IncRename " .. vim.fn.expand("<cword>")
-end, { expr = true, desc = "LSP rename" })
+-- LSP rename
+vim.keymap.set('n', 'cd', vim.lsp.buf.rename, { desc = 'LSP rename' })
 
 -- Вставить без перезаписи буфера
 vim.keymap.set("x", "p", "P", { desc = "Вставить без перезаписи буфера" })
