@@ -1,16 +1,8 @@
--- vim.lsp.jsonls.setup {
---   settings = {
---     json = {
---       -- schemas = require('schemastore').json.schemas(),
---       -- validate = { enable = true },
---     },
---   },
--- }
 
+vim.lsp.config('phpactor', {})
 vim.lsp.enable('phpactor')
 
 vim.g.no_python_maps = 1
-vim.lsp.enable('pyright')
 vim.lsp.config('pyright', {
     root_markers = { 'pyproject.toml', 'requirements.txt', 'pyrightconfig.json', '.git' },
     ettings = {
@@ -24,11 +16,11 @@ vim.lsp.config('pyright', {
 	        ignore = { '*' },
 	        },
 		},
-	},	
+	},
 })
+vim.lsp.enable('pyright')
 
 -- Setup Ruff Linter
-vim.lsp.enable('ruff')
 vim.lsp.config('ruff_lsp', {
   init_options = {
     settings = {
@@ -42,12 +34,22 @@ vim.lsp.config('ruff_lsp', {
     }
   }
 })
+vim.lsp.enable('ruff')
 
-vim.lsp.enable('ts_ls')
+vim.lsp.config('enforce_script_lsp', {
+  cmd = { 'enforce-script-lsp' },
+  filetypes = { 'enforce' },
+  root_markers = { '.git' },
+})
+vim.lsp.enable('enforce_script_lsp')
+
+
 vim.lsp.config('ts_ls', {})
+vim.lsp.enable('ts_ls')
 
-vim.lsp.enable('angularls')
+
 vim.lsp.config('angularls', {})
+vim.lsp.enable('angularls')
 
 
 vim.lsp.config('graphql', {
