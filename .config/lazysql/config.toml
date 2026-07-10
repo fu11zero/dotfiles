@@ -1,4 +1,5 @@
 ConfigFile = '/home/fullzero/.config/lazysql/config.toml'
+LocalConfigFile = ''
 
 [application]
 DefaultPageSize = 300
@@ -7,106 +8,121 @@ SidebarOverlay = false
 MaxQueryHistoryPerConnection = 300
 TreeWidth = 30
 JSONViewerWordWrap = false
+EnterOpensJSONViewer = false
+ConfirmOnQuit = true
 
 [[database]]
 Name = 'vrp'
 URL = 'pgsql://app-user:TMS-secure-PaSsWoRd-27102025@localhost/postgres'
 Provider = 'postgres'
-Username = ''
-Password = ''
-Hostname = ''
-Port = ''
 DBName = 'postgres'
-URLParams = ''
-ReadOnly = false
 Schemas = ['public']
-Commands = []
 
 [[database]]
-Name = 'moodle'
+Name = 'academy.local'
 URL = 'postgres://randomuser123:randompass456@localhost:5432/postgres?sslmode=disable'
 Provider = 'postgres'
-Username = ''
-Password = ''
-Hostname = ''
-Port = ''
 DBName = 'postgres'
-URLParams = ''
-ReadOnly = false
 Schemas = ['public']
-Commands = []
 
 [[database]]
-Name = 'universities.local'
+Name = 'academy.prod'
+URL = 'pgsql://moodle:TnKAKHKInLnk@172.19.203.112:5432/postgres?sslmode=disable'
+Provider = 'postgres'
+DBName = 'moodle'
+Schemas = ['public']
+
+[[database]]
+Name = 'academy.bi'
+URL = 'pgsql://bi:Nwh7i9y4RjZ49BPlDuNb@127.0.0.1:${port}/postgres?sslmode=disable'
+Provider = 'postgres'
+DBName = 'bi'
+Schemas = ['public']
+
+[[database.Commands]]
+Command = 'ssh -tt -L ${port}:172.19.203.112:5432 apc.ts3'
+WaitForPort = '${port}'
+SaveOutputTo = ''
+Timeout = 0
+
+[[database]]
+Name = 'monitoring.apc.local'
 URL = 'pgsql://universities:universities@127.0.0.1:45432/universities?sslmode=disable'
 Provider = 'postgres'
-Username = ''
-Password = ''
-Hostname = ''
-Port = ''
 DBName = 'universities'
-URLParams = ''
-ReadOnly = false
 Schemas = ['public']
-Commands = []
-
-[[database]]
-Name = 'universities.parser.local'
-URL = 'pgsql://parser:parser@127.0.0.1:65432/parser?sslmode=disable'
-Provider = 'postgres'
-Username = ''
-Password = ''
-Hostname = ''
-Port = ''
-DBName = 'parser'
-URLParams = ''
-ReadOnly = false
-Schemas = ['public']
-Commands = []
 
 [[database]]
 Name = 'startup.local'
 URL = 'pgsql://startup:startup-factory@127.0.0.1:25432/startup?sslmode=disable'
 Provider = 'postgres'
-Username = ''
-Password = ''
-Hostname = ''
-Port = ''
 DBName = 'startup'
-URLParams = ''
-ReadOnly = false
 Schemas = ['public']
-Commands = []
 
 [[database]]
 Name = 'startup.dev'
 URL = 'pgsql://app-user:ZlmsaOKBGwhgh7rjpZJ2@localhost:${port}/postgres?sslmode=disable'
 Provider = 'postgres'
-Username = ''
-Password = ''
-Hostname = ''
-Port = ''
 DBName = 'postgres'
-URLParams = ''
-ReadOnly = false
 Schemas = ['public']
-Commands = [
-    { Command = 'ssh -tt -L ${port}:backend-dev-postgres-service.apc-startup-factory.svc.cluster.local:5432 -p 30022 root@k8s.unitcode.dev', WaitForPort = '${port}' }
-]
+
+[[database.Commands]]
+Command = 'ssh -tt -L ${port}:backend-dev-postgres-service.apc-startup-factory.svc.cluster.local:5432 -p 30022 root@k8s.unitcode.dev'
+WaitForPort = '${port}'
+SaveOutputTo = ''
+Timeout = 0
 
 [[database]]
 Name = 'startup.test'
 URL = 'pgsql://startup_factory:s7AXtKOWqNN6LX@localhost:${port}/startup_factory?sslmode=disable'
 Provider = 'postgres'
-Username = ''
-Password = ''
-Hostname = ''
-Port = ''
 DBName = 'startup_factory'
-URLParams = ''
-ReadOnly = false
-Schemas = []
-Commands = [
-    { Command = 'ssh -tt -L ${port}:10.11.61.31:5432 apc.ts3', WaitForPort = '${port}' }
-]
+Schemas = ['public']
 
+[[database.Commands]]
+Command = 'ssh -tt -L ${port}:10.11.61.31:5432 apc.ts3'
+WaitForPort = '${port}'
+SaveOutputTo = ''
+Timeout = 0
+
+[[database]]
+Name = 'br.central.manager'
+URL = 'pgsql://br:br_dev@172.30.0.2:30002/br_manager?sslmode=disable'
+Provider = 'postgres'
+DBName = 'br_manager'
+Schemas = ['public']
+
+[[database]]
+Name = 'br.central.mod'
+URL = 'pgsql://br:br_dev@172.20.0.2:30002/br_mod?sslmode=disable'
+Provider = 'postgres'
+DBName = 'br_mod'
+Schemas = ['public']
+
+[[database]]
+Name = 'br.central.site'
+URL = 'pgsql://br:br_dev@172.20.0.2:30002/br_site?sslmode=disable'
+Provider = 'postgres'
+DBName = 'br_site'
+Schemas = ['public']
+
+[[database]]
+Name = 'br.eu'
+URL = 'pgsql://br:br_dev@172.30.0.3:30002/br_mod?sslmode=disable'
+Provider = 'postgres'
+DBName = 'br_mod'
+Schemas = ['public']
+
+[[database]]
+Name = 'br.us'
+URL = 'pgsql://br:br_dev@172.30.0.4:30002/br_mod?sslmode=disable'
+Provider = 'postgres'
+DBName = 'br_mod'
+Schemas = ['public']
+
+[[database]]
+Name = 'br.as'
+URL = 'pgsql://br:br_dev@10.255.255.2:30005/br_mod?sslmode=disable'
+Provider = 'postgres'
+DBName = 'br_mod'
+Schemas = ['public']
