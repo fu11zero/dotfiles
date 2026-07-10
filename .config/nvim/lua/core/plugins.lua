@@ -201,7 +201,16 @@ require("lazy").setup({
     {
         "crnvl96/lazydocker.nvim",
         event = 'VeryLazy',
-        opts = {},
+        opts = {
+            window = {
+                settings = {
+                    width = 1, -- Percentage of screen width (0 to 1)
+                    height = 1, -- Percentage of screen height (0 to 1)
+                    -- border = 'rounded', -- See ':h nvim_open_win' border options
+                    -- relative = 'editor', -- See ':h nvim_open_win' relative options
+                }
+            }
+        },
         dependencies = { }
     },
 
@@ -322,32 +331,33 @@ require("lazy").setup({
         { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
         { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
         { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
-        { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
-        { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
-        { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
-        { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
-        { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
-        { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
-        { "<leader>sc", function() Snacks.picker.command_history() end, desc = "Command History" },
-        { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
-        { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
-        { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
-        { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
+        -- { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
+        -- { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
+        -- { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
+        -- { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
+        -- { "<leader>sc", function() Snacks.picker.command_history() end, desc = "Command History" },
+        -- { "<leader>gd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+        -- { "<leader>gh", function() Snacks.picker.help() end, desc = "Help Pages" },
+        -- { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
+        -- { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
         { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
         { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
         { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
         { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
-        { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+        { "gs", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+        { "gS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Symbols" },
         { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
         { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
         { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
         { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
-        { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
-        { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
-        { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
-        { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+        { "<leader>b", function() Snacks.git.blame_line() end, desc = "Blame line" },
+        -- { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
+        -- { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
+        -- { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
         { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
-        { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
+        { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" , mode = { "n", "v", "i", "t" }},
+        { "<c-t>",      function() Snacks.terminal.open() end, desc = "Toggle Terminal" , mode = { "t" }},
+        { "<c-q>",      function() Snacks.terminal.close() end, desc = "Close Terminal" , mode = { "t" }},
         { "]]",         function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
         { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
       },
@@ -364,5 +374,28 @@ require("lazy").setup({
           end,
         })
       end,
-    }
+    },
+    -- {
+    --     'topaxi/pipeline.nvim',
+    --     keys = {
+    --         { '<leader>ci', '<cmd>Pipeline<cr>', desc = 'Open pipeline.nvim' },
+    --     },
+    --     -- build = 'make',
+    --     ---@type pipeline.Config
+    --     opts = {
+    --         providers = {
+    --             gitlab = {
+    --                 default_host = 'gitlab.unitcode.ru',
+    --             },
+    --         },
+    --     }
+    -- }
 })
+
+-- require('lualine').setup({
+--   sections = {
+--     lualine_a = {
+--       { 'pipeline' },
+--     },
+--   }
+-- })

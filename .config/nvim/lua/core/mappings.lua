@@ -1,5 +1,6 @@
 -- Quit
-vim.keymap.set('n', '<leader>cc', '<cmd>:quitall<CR>', { desc = "Quit" })
+vim.keymap.set('n', '<leader>q', '<cmd>:quitall<CR>', { desc = "Quit" })
+-- vim.keymap.set('n', '<leader>c', '<cmd>:quitall<CR>', { desc = "Quit" })
 
 -- Copy all text
 -- vim.keymap.set('n', '<C-a>', '<cmd>%y+<CR>')
@@ -19,13 +20,13 @@ vim.keymap.set('n', '<C-q>', ':bp|bd #<CR>', { silent = true })
 vim.keymap.set('n', '<C-S-Q>', ':BufferLineCloseOthers<CR>')
 
 -- LazyGIT (via snacks)
-vim.keymap.set("n", "<leader>lg", function() Snacks.lazygit() end, { desc = "Toggle LazyGit", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>g", function() Snacks.lazygit() end, { desc = "Toggle LazyGit", noremap = true, silent = true })
 
 -- LazySQL
-vim.keymap.set("n", "<leader>ls", "<cmd>LazySql<CR>", { desc = "Database LazySQL", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>s", "<cmd>LazySql<CR>", { desc = "Database LazySQL", noremap = true, silent = true })
 
 -- LazyDocker
-vim.keymap.set("n", "<leader>ld", "<cmd>lua LazyDocker.toggle()<CR>", { desc = "Toggle LazyDocker", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>d", "<cmd>lua LazyDocker.toggle()<CR>", { desc = "Toggle LazyDocker", noremap = true, silent = true })
 
 -- TodoList
 vim.keymap.set('n', '<leader>nl', ':TodoTelescope<CR>')

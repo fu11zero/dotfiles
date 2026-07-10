@@ -12,7 +12,7 @@ require('core.filetypes')
 -- disabled require('core.autocorrection')
 
 -- Plugins
--- require('plugins.angular')   -- requires telescope + nvim-tree + toggleterm
+require('plugins.angular')
 require('plugins.autolayout')
 -- require('plugins.nvim-tree') -- replaced by snacks.explorer
 require('plugins.treesitter')
@@ -25,6 +25,7 @@ require('plugins.mason')
 -- require('plugins.dashboard') -- replaced by snacks.dashboard
 require('plugins.flatten')
 -- require('plugins.illuminate') -- replaced by snacks.words
+require('plugins.k9s')
 -- require('plugins.colorizer')
 require('plugins.lualine')
 require('plugins.cellular')

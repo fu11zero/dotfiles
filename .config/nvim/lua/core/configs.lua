@@ -77,3 +77,13 @@ vim.opt.fillchars = {
 vim.cmd([[highlight clear LineNr]])
 vim.cmd([[highlight clear SignColumn]])
 
+-- Change cwd to directory when nvim opens one (e.g. from Yazi)
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = vim.api.nvim_create_augroup("DirOpenCwd", { clear = true }),
+  callback = function(ev)
+    if ev.file ~= "" and vim.fn.isdirectory(ev.file) == 1 then
+      vim.fn.chdir(ev.file)
+    end
+  end,
+})
+

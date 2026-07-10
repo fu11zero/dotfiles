@@ -9,6 +9,7 @@
 
 vim.lsp.enable('phpactor')
 
+vim.g.no_python_maps = 1
 vim.lsp.enable('pyright')
 vim.lsp.config('pyright', {
     root_markers = { 'pyproject.toml', 'requirements.txt', 'pyrightconfig.json', '.git' },
