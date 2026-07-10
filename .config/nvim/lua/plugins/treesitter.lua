@@ -33,6 +33,14 @@ vim.filetype.add({
   },
 })
 
+vim.treesitter.language.register('enforce', 'enforce')
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "enforce",
+  callback = function()
+    vim.treesitter.start()
+  end,
+})
+
 require('nvim-treesitter').setup {
 
     ensure_installed = {
