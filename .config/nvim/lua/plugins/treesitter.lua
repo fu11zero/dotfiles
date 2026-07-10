@@ -38,6 +38,12 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "enforce",
   callback = function()
     vim.treesitter.start()
+    vim.lsp.start({
+      name = "enforce-script-lsp",
+      cmd = { "enforce-script-lsp" }, -- Имя бинарника в вашей системе
+      root_dir = vim.fs.dirname(vim.fs.find({ '.git' }, { upward = true })[1]),
+      settings = {},
+    })
   end,
 })
 

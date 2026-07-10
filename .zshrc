@@ -178,6 +178,9 @@ alias nv="nvim ."
 # local binaries
 export PATH="/home/fullzero/.local/bin:$PATH"
 
+# cargo binaries
+export PATH="/home/fullzero/.cargo/bin:$PATH"
+
 # bun completions
 [ -s "/home/fullzero/.bun/_bun" ] && source "/home/fullzero/.bun/_bun"
 
