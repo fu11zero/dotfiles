@@ -39,7 +39,7 @@ vim.lsp.enable('ruff')
 vim.lsp.config('enforce_script_lsp', {
   cmd = { 'enforce-script-lsp' },
   filetypes = { 'enforce' },
-  root_markers = { '.git' },
+  root_markers = { '.git', 'Scripts' },
 })
 vim.lsp.enable('enforce_script_lsp')
 
