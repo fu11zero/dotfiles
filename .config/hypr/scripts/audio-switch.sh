@@ -5,7 +5,8 @@
 devices=$(wpctl status | grep -E -A 30 "^Audio$" | grep -B 30 " └─ Streams:" | grep -A 5 "Sinks:" | grep -B 5 " ├─ Sources:" | grep -Po '(?<=|)[ *]\d+\..+(?=\[.*])')
 
 # Вызываем меню выбора (здесь используется wofi, адаптируйте под hyprlauncher)
-selected=$(echo "$devices" | hyprlauncher -o "UI:window_size = 100 600" --dmenu)
+# selected=$(echo "$devices" | hyprlauncher -o "UI:window_size = 100 600" --dmenu)
+selected=$(echo "$devices" | wofi -o "UI:window_size = 100 600" --dmenu)
 echo $selected
 
 if [ -n "$selected" ]; then
