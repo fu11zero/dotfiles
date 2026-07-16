@@ -1,0 +1,147 @@
+{
+    "layer": "top",
+    "height": 10,
+    "spacing": 4,
+    "modules-left": [
+        "cpu",
+        "memory",
+        "temperature",
+        "battery"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "mpd",
+        "hyprland/language",
+        "backlight",
+        "custom/mode",
+        "network",
+        "pulseaudio",
+        "clock",
+        "tray",
+        "custom/power"
+    ],
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "\uf023",
+            "unlocked": "\uf09c"
+        }
+    },
+    "hyprland/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "🇺🇸",
+        "format-ru": "🇷🇺",
+        // "format-en": "ENG",
+        // "format-ru": "\u0420\u0423\u0421"
+    },
+    "hyprland/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", "\uf8cb"],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) \u2e38{songPosition}|{queueLength}\u2e38 {volume}% \uf001",
+        "format-disconnected": "Disconnected \uf001",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped \uf001",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": { "on": "\uf0c4 " },
+        "random-icons": { "off": "<span color=\"#f53c3c\">\uf074</span> ", "on": "\uf074 " },
+        "repeat-icons": { "on": "\uf01e " },
+        "single-icons": { "on": "\uf01e1 " },
+        "state-icons": { "paused": "\uf04c", "playing": "\uf04b" },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": { "activated": "\uf06e", "deactivated": "\uf070" }
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "\uf2db {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}%",
+        "states": { "critical": 90, "warning": 80, "good": 50 }
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}\u00b0C {icon}",
+        "format-icons": ["\uf787", "\uf2c9", "\uf7a9"]
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+    },
+    "battery": {
+        "states": { "good": 90, "warning": 30, "critical": 15 },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% \uf5e7",
+        "format-plugged": "{capacity}% \uf1e6",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) \uf1eb",
+        "format-ethernet": "{ipaddr}/{cidr} \uf7d6",
+        "tooltip-format": "{ifname} via {gwaddr} \uf7d6",
+        "format-linked": "{ifname} (No IP) \uf7d6",
+        "format-disconnected": "Disconnected \u26a0",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "\uf6a9 {icon}",
+        "format-muted": "\uf6a9 {format_source}",
+        "format-source": "{volume}% \uf310",
+        "format-source-muted": "\uf311",
+        "format-icons": {
+            "headphone": "\uf025",
+            "hands-free": "\uf590",
+            "headset": "\uf590",
+            "phone": "\uf095",
+            "portable": "\uf095",
+            "car": "\uf1b9",
+            "default": ["\uf025", "\uf027", "\uf028"]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/mode": {
+        "format": "{}",
+        "max-length": 40,
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mode.sh",
+        "on-click": "$HOME/.local/bin/toggle-theme"
+    },
+    "custom/power": {
+        "format": "\u23fb ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "shutdown now",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
+    }
+}
