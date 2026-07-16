@@ -39,3 +39,13 @@ vim.keymap.set('n', 'cd', vim.lsp.buf.rename, { desc = 'LSP rename' })
 
 -- Вставить без перезаписи буфера
 vim.keymap.set("x", "p", "P", { desc = "Вставить без перезаписи буфера" })
+
+-- Checkbox
+vim.keymap.set('n', '<leader>x', function()
+  local line = vim.api.nvim_get_current_line()
+  if string.find(line, "%[% %]") then
+    vim.cmd([[s/\[ \]/\[x\]/]])
+  elseif string.find(line, "%[x%]") then
+    vim.cmd([[s/\[x\]/\[ \]/]])
+  end
+end, { desc = "Toggle checkbox" })
