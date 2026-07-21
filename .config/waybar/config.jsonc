@@ -11,10 +11,10 @@
         "hyprland/scratchpad"
     ],
     "modules-center": [
-        "hyprland/language",
         "clock"
     ],
     "modules-right": [
+        "hyprland/language",
         "mpd",
         "backlight",
         "custom/mode",
