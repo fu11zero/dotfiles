@@ -42,9 +42,16 @@ vim.keymap.set('n', '<leader>gb', function()
     gitsigns.blame_line({ full = true })
 end)
 
-vim.keymap.set('n', '<leader>gD', Snacks.picker.git_diff)
+vim.keymap.set('n', '<leader>gd', Snacks.picker.git_diff, { desc = "Open Diff" })
+vim.keymap.set("n", "<leader>gL", Snacks.picker.git_log, { desc = "Open project", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>glf", Snacks.picker.git_log_file, { desc = "Open file history", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gll", Snacks.picker.git_log_file, { desc = "Open line history", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gH", Snacks.picker.git_log, { desc = "Open project", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ghf", Snacks.picker.git_log_file, { desc = "Open file history", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ghl", Snacks.picker.git_log_file, { desc = "Open line history", noremap = true, silent = true })
 
--- vim.keymap.set('n', '<leader>gd', gitsigns.diffthis)
+
+-- vim.keymap.set('n', '<leader>gD', gitsigns.diffthis)
 vim.keymap.set('n', '<leader>gD', function()
     gitsigns.diffthis('~')
 end)

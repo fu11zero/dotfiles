@@ -15,7 +15,7 @@ require('core.git')
 -- Plugins
 require('plugins.angular')
 require('plugins.autolayout')
--- require('plugins.nvim-tree') -- replaced by snacks.explorer
+require('plugins.nvim-tree')
 require('plugins.treesitter')
 require('plugins.lsp')
 require('plugins.cmp')

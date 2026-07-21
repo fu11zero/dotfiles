@@ -89,14 +89,14 @@ require('nvim-treesitter').setup {
             lookahead = true,
             keymaps = {
                 -- Функции
-                ["af"] = "@function.outer",
-                ["if"] = "@function.inner",
+                -- ["af"] = "@function.outer",
+                -- ["if"] = "@function.inner",
                 -- Классы
-                ["ac"] = "@class.outer",
-                ["ic"] = "@class.inner",
+                -- ["ac"] = "@class.outer",
+                -- ["ic"] = "@class.inner",
                 -- Параметры/Аргументы
-                ["aa"] = "@parameter.outer",
-                ["ia"] = "@parameter.inner",
+                -- ["aa"] = "@parameter.outer",
+                -- ["ia"] = "@parameter.inner",
                 -- Условия (if/else)
                 -- ["ai"] = "@conditional.outer",
                 -- ["ii"] = "@conditional.inner",

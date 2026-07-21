@@ -9,9 +9,13 @@ vim.keymap.set('n', '<leader>q', '<cmd>:quitall<CR>', { desc = "Quit" })
 -- vim.keymap.set('i', '<C-s>', '<cmd>:w<CR>')
 -- vim.keymap.set('n', '<C-s>', '<cmd>:w<CR>')
 
+-- NvimTree
+vim.keymap.set('n', '<C-e>', ':NvimTreeFindFile<CR>')
+vim.keymap.set('n', '<C-S-E>', ':NvimTreeToggle<CR>')
+-- vim.keymap.set('n', '<leader>t', '<C-w> p', { desc = 'Go to previous window' })  
 -- Snacks Explorer (replaces NvimTree)
-vim.keymap.set('n', '<C-e>', function() Snacks.explorer.reveal() end, { desc = 'Reveal in Explorer' })
-vim.keymap.set('n', '<C-S-E>', function() Snacks.explorer() end, { desc = 'Toggle Explorer' })
+-- vim.keymap.set('n', '<C-e>', function() Snacks.explorer.reveal() end, { desc = 'Reveal in Explorer' })
+-- vim.keymap.set('n', '<C-S-E>', function() Snacks.explorer() end, { desc = 'Toggle Explorer' })
 
 -- BufferLine
 vim.keymap.set('n','<M-l>', ':BufferLineCycleNext<CR>')

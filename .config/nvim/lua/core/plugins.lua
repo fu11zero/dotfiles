@@ -190,6 +190,24 @@ require("lazy").setup({
     },
 
     {
+        "chrisgrieser/nvim-various-textobjs", event = "VeryLazy",
+        opts = {
+            keymaps = {
+                useDefaults = true,
+            }
+        },
+        keys = {
+            -- Swap 's' for subword (inner/outer)
+            { "is", '<cmd>lua require("various-textobjs").subword("inner")<CR>', mode = { "o", "x" }, desc = "Inner subword" },
+            { "as", '<cmd>lua require("various-textobjs").subword("outer")<CR>', mode = { "o", "x" }, desc = "Outer subword" },
+
+            -- Swap 'S' for sentence (inner/outer)
+            { "iS", '<cmd>lua require("various-textobjs").sentence("inner")<CR>', mode = { "o", "x" }, desc = "Inner sentence" },
+            { "aS", '<cmd>lua require("various-textobjs").sentence("outer")<CR>', mode = { "o", "x" }, desc = "Outer sentence" },
+        },
+    },
+
+    {
       "LostbBlizzard/lazysql.nvim",
       opts = {},
       dependencies = { "MunifTanjim/nui.nvim" }
@@ -234,12 +252,12 @@ require("lazy").setup({
 
     {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 
-    -- {
-    --   "nvim-tree/nvim-tree.lua",
-    --   version = "*",
-    --   lazy = false,
-    --   dependencies = { "nvim-tree/nvim-web-devicons" },
-    -- },
+    {
+      "nvim-tree/nvim-tree.lua",
+      version = "*",
+      lazy = false,
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
 
     {
         'dense-analysis/ale',
@@ -284,8 +302,8 @@ require("lazy").setup({
       ---@type snacks.Config
       opts = {
         bigfile = { enabled = true },
-        dashboard = { enabled = true },
-        explorer = { enabled = true },
+        dashboard = { enabled = false },
+        explorer = { enabled = false },
         indent = { enabled = true },
         input = { enabled = true },
         picker = { enabled = true },
@@ -318,7 +336,7 @@ require("lazy").setup({
         { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
         { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
         { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
-        { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
+        -- { "<leader>N", function() Snacks.picker.notifications() end, desc = "Notification History" },
         { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
         { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
         { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
@@ -342,7 +360,7 @@ require("lazy").setup({
         { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
         { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
         { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
-        { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
+        { "<leader>N",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
         { "<leader>b", function() Snacks.git.blame_line() end, desc = "Blame line" },
         -- { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
         -- { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
