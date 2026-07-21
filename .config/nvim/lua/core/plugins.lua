@@ -13,11 +13,45 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    ui = {
+        border = "rounded",
+    },
+
     {
         "willothy/flatten.nvim",
         config = true,
         lazy = false,
         priority = 1001,
+    },
+
+    {
+        "gbprod/yanky.nvim",
+        dependencies = {
+            { "kkharji/sqlite.lua" }
+        },
+        opts = {
+            ring = { storage = "sqlite" },
+        },
+        keys = {
+            { "<leader>p", "<cmd>YankyRingHistory<cr>", mode = { "n", "x" }, desc = "Open Yank History" },
+            { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank text" },
+            { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor" },
+            { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before cursor" },
+            -- { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor and leave cursor after" },
+            -- { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before cursor and leave cursor after " },
+            -- { "<c-p>", "<Plug>(YankyPreviousEntry)", desc = "Select previous entry through yank history" },
+            -- { "<c-n>", "<Plug>(YankyNextEntry)", desc = "Select next entry through yank history" },
+            -- { "]p", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put indented after cursor (linewise)" },
+            -- { "[p", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put indented before cursor (linewise)" },
+            -- { "]P", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put indented after cursor (linewise)" },
+            -- { "[P", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put indented before cursor (linewise)" },
+            -- { ">p", "<Plug>(YankyPutIndentAfterShiftRight)", desc = "Put and indent right" },
+            -- { "<p", "<Plug>(YankyPutIndentAfterShiftLeft)", desc = "Put and indent left" },
+            -- { ">P", "<Plug>(YankyPutIndentBeforeShiftRight)", desc = "Put before and indent right" },
+            -- { "<P", "<Plug>(YankyPutIndentBeforeShiftLeft)", desc = "Put before and indent left" },
+            -- { "=p", "<Plug>(YankyPutAfterFilter)", desc = "Put after applying a filter" },
+            -- { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put before applying a filter" },
+        },
     },
 
     {
@@ -68,36 +102,17 @@ require("lazy").setup({
 
     -- { "smjonas/inc-rename.nvim", opts = {} },
 
-    -- {
-    --     'stevearc/dressing.nvim',
-    --     opts = {},
-    --     config = function()
-    --         require("inc_rename").setup {
-    --             input_buffer_type = "dressing",
-    --         }
-    --     end
-    -- },
-
-    -- {
-    --     "3rd/image.nvim",
-    --     event = "VeryLazy",
-    --     build = false,
-    --     opts = {
-    --         processor = "magick_cli",
-    --     }
-    -- },
-
-    -- {
-    --     'lewis6991/gitsigns.nvim',
-    --     event = "VeryLazy",
-    --     config = function()
-    --         require('gitsigns').setup {
-    --             current_line_blame = true,
-    --             current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
-    --             max_file_length = 40000,
-    --         }
-    --     end
-    -- },
+    {
+        'lewis6991/gitsigns.nvim',
+        event = "VeryLazy",
+        config = function()
+            require('gitsigns').setup {
+                current_line_blame = true,
+                -- current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
+                max_file_length = 40000,
+            }
+        end
+    },
 
     {
         'rgroli/other.nvim',
@@ -140,6 +155,7 @@ require("lazy").setup({
             vim.api.nvim_set_keymap("n", "gog", "<cmd>:Other graphql<CR>", { noremap = true, silent = true })
         end
     },
+
     {
         "kylechui/nvim-surround",
         version = "^3.0.0",
@@ -169,35 +185,16 @@ require("lazy").setup({
     --   keys = { ... },
     -- },
 
-    -- {
-    --     "wellle/targets.vim",
-    -- },
-
-    -- {
-    --   'nvimdev/dashboard-nvim',
-    --   event = 'VimEnter',
-    --   config = function()
-    --     require('dashboard').setup {}
-    --   end,
-    --   dependencies = { {'nvim-tree/nvim-web-devicons'}}
-    -- },
-
-    -- {
-    --     "kdheepak/lazygit.nvim",
-    --     event = 'VeryLazy',
-    --     cmd = { "LazyGit", "LazyGitConfig", "LazyGitCurrentFile", "LazyGitFilter", "LazyGitFilterCurrentFile" },
-    --     config = function()
-    --         vim.g.lazygit_floating_window_scaling_factor = 1.0
-    --         vim.g.lazygit_floating_window_border_chars = "none"
-    --         vim.g.lazygit_floating_window_use_plenary = 0
-    --     end
-    -- },
+    {
+        "wellle/targets.vim",
+    },
 
     {
       "LostbBlizzard/lazysql.nvim",
       opts = {},
       dependencies = { "MunifTanjim/nui.nvim" }
     },
+
     {
         "crnvl96/lazydocker.nvim",
         event = 'VeryLazy',
@@ -214,7 +211,6 @@ require("lazy").setup({
         dependencies = { }
     },
 
-    { 'Eandrju/cellular-automaton.nvim' },
     { 'norcalli/nvim-colorizer.lua' },
 
     {
@@ -228,7 +224,6 @@ require("lazy").setup({
       opts = {}
     },
 
-    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
     {
@@ -257,8 +252,6 @@ require("lazy").setup({
             }
         end
     },
-
-    -- { 'RRethy/vim-illuminate' },
 
     {
         "vhyrro/luarocks.nvim",
@@ -333,17 +326,17 @@ require("lazy").setup({
         { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
         -- { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
         -- { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
-        -- { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
+        { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
         -- { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
         -- { "<leader>sc", function() Snacks.picker.command_history() end, desc = "Command History" },
-        -- { "<leader>gd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+        { "<leader>gd", function() Snacks.picker.diagnostics_bufffer() end, desc = "Diagnostics" },
         -- { "<leader>gh", function() Snacks.picker.help() end, desc = "Help Pages" },
         -- { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
-        -- { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
+        { "<leader>gm", function() Snacks.picker.marks() end, desc = "Marks" },
         { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
         { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
         { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
-        { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+        { "gt", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto Type Definition" },
         { "gs", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
         { "gS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Symbols" },
         { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
@@ -375,21 +368,26 @@ require("lazy").setup({
         })
       end,
     },
-    -- {
-    --     'topaxi/pipeline.nvim',
-    --     keys = {
-    --         { '<leader>ci', '<cmd>Pipeline<cr>', desc = 'Open pipeline.nvim' },
-    --     },
-    --     -- build = 'make',
-    --     ---@type pipeline.Config
-    --     opts = {
-    --         providers = {
-    --             gitlab = {
-    --                 default_host = 'gitlab.unitcode.ru',
-    --             },
-    --         },
-    --     }
-    -- }
+
+    {
+        'topaxi/pipeline.nvim',
+        keys = {
+            { '<leader>ci', '<cmd>Pipeline<cr>', desc = 'Open pipeline.nvim' },
+        },
+        -- build = 'make',
+        ---@type pipeline.Config
+        opts = {
+            providers = {
+                gitlab = {
+                    default_host = 'gitlab.unitcode.ru',
+                },
+            },
+            allowed_hosts={
+                'gitlab.unitcode.ru'
+            }
+        }
+    }
+
 })
 
 -- require('lualine').setup({

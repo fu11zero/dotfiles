@@ -19,9 +19,6 @@ vim.keymap.set('n','<M-h>', ':BufferLineCyclePrev<CR>')
 vim.keymap.set('n', '<C-q>', ':bp|bd #<CR>', { silent = true })
 vim.keymap.set('n', '<C-S-Q>', ':BufferLineCloseOthers<CR>')
 
--- LazyGIT (via snacks)
-vim.keymap.set("n", "<leader>g", function() Snacks.lazygit() end, { desc = "Toggle LazyGit", noremap = true, silent = true })
-
 -- LazySQL
 vim.keymap.set("n", "<leader>s", "<cmd>LazySql<CR>", { desc = "Database LazySQL", noremap = true, silent = true })
 

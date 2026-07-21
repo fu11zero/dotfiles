@@ -104,9 +104,18 @@ vim.lsp.config('lua_ls', {
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', 'gh', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous Diagnostic' })
 -- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Previous Diagnostic' })
+
+vim.keymap.set('n', ']e', function()
+  vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR, float = true })
+end, { desc = 'Next Error' })
+
+vim.keymap.set('n', '[e', function()
+  vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR, float = true })
+end, { desc = 'Previous Error' })
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

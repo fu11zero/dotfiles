@@ -1,3 +1,17 @@
+local function escape(str)
+  -- Экранируем системные разделители для корректной работы langmap
+  return vim.fn.escape(str, [[;,."|\]])
+end
+
+local en = [[`qwertyuiop[]asdfghjkl;'zxcvbnm!@#$%^&()*]]
+local ru = [[ёйцукенгшщзхъфывапролджэячсмить!"№;%:?()*]]
+local en_shift = [[~QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>]]
+local ru_shift = [[ËЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]]
+
+-- vim.opt.langmap = vim.fn.join({
+--   escape(ru) .. ';' .. escape(en),
+--   escape(ru_shift) .. ';' .. escape(en_shift)
+-- }, ',')
 
 -- Basic Settings
 vim.g.did_load_filetypes = 1

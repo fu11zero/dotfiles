@@ -9,6 +9,7 @@ require('core.colors')
 require('core.configs')
 require('core.emmets')
 require('core.filetypes')
+require('core.git')
 -- disabled require('core.autocorrection')
 
 -- Plugins
@@ -24,11 +25,9 @@ require('plugins.mason')
 -- require('plugins.telescope') -- replaced by snacks.picker
 -- require('plugins.dashboard') -- replaced by snacks.dashboard
 require('plugins.flatten')
--- require('plugins.illuminate') -- replaced by snacks.words
 require('plugins.k9s')
 -- require('plugins.colorizer')
 require('plugins.lualine')
-require('plugins.cellular')
 require('plugins.comment')
 require('plugins.opencode')
 require('plugins.otter')
