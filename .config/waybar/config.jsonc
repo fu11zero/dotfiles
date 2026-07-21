@@ -73,8 +73,7 @@
     "clock": {
         "interval": 1,
         "format": "{:%a, %Y-%m-%d %H:%M:%S}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
-        "format-alt": "{:%H:%M - %A, %B %d}"
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
     },
     "cpu": {
         "format": "\uf2db {usage}%",
