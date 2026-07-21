@@ -83,11 +83,11 @@
     },
     "temperature": {
         "critical-threshold": 80,
-        "format": "{temperatureC}\u00b0C {icon}",
-        "format-icons": ["\uf787", "\uf2c9", "\uf7a9"]
+        "format": "{icon} {temperatureC}\u00b0C",
+        "format-icons": ["\uf2cb", "\uf2ca", "\uf2c9", "\uf2c8", "\uf2c7"]
     },
     "backlight": {
-        "format": "{percent}% {icon}",
+        "format": "{icon} {percent}%",
         "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
     },
     "battery": {
