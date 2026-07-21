@@ -154,8 +154,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias lazydotfiles='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias lf="cd \"\$(command lf -print-last-dir \"$@\")\""
 alias cpr="cp -r"
 alias ls="exa"
@@ -174,6 +172,9 @@ alias P="cd ~/Projects"
 #alias ncal="cal -M"
 #alias ncal="cal -M"
 alias nv="nvim ."
+
+alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias lazydotfiles="lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # local binaries
 export PATH="/home/fullzero/.local/bin:$PATH"
