@@ -10,11 +10,13 @@ require('core.configs')
 require('core.emmets')
 require('core.filetypes')
 require('core.git')
+require('core.clipboard')
 -- disabled require('core.autocorrection')
 
 -- Plugins
 require('plugins.angular')
 require('plugins.autolayout')
+require('plugins.mini')
 require('plugins.nvim-tree')
 require('plugins.treesitter')
 require('plugins.lsp')
@@ -37,4 +39,3 @@ require('plugins.trouble')
 -- require('plugins.toggleterm') -- replaced by snacks.terminal
 require('plugins.ufo')
 require('plugins.whichkey')
-require('plugins.mini')

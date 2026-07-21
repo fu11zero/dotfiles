@@ -30,3 +30,4 @@ require('mini.pairs').setup({
     ['{'] = { action = 'open', pair = '{}', neigh_pattern = '[^\\}]' },
   },
 })
+require("mini.icons").mock_nvim_web_devicons()

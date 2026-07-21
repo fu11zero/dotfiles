@@ -11,6 +11,41 @@ require("nvim-tree").setup({
     },
     renderer = {
         -- root_folder_label = "",
+        indent_markers = {
+            enable = true, -- включает линии отступа (вложенности)
+            inline_arrows = true, -- стрелки папок будут на одной линии с маркерами (рекомендуется)
+            icons = {
+                corner = "└", -- символ нижнего угла
+                edge = "│", -- символ вертикальной линии
+                item = "├",
+                bottom = "─",
+                none = " ",
+            },
+        },
+        icons = {
+            git_placement = "right_align",
+            web_devicons = {
+                file = { enable = true, color = true }, -- включение файловых декораторов
+                folder = { enable = true, color = true }, -- включение декораторов папок
+            },
+            show = {
+                file = true,
+                folder = true,
+                folder_arrow = false, -- включает декоратор стрелочки у папки
+            },
+            -- glyphs = {
+            --     folder = {
+            --         arrow_closed = "🖈", -- или ""
+            --         arrow_open = "📂",   -- или ""
+            --         default = "  ",      -- базовая иконка закрытой папки из snacks
+            --         open = "  ",         -- иконка открытой папки из snacks
+            --         empty = "  ",        -- пустая папка
+            --         empty_open = "  ",   -- открытая пустая папка
+            --         symlink = "",
+            --         symlink_open = "",
+            --     },
+            -- },
+        },
     },
     view = {
         preserve_window_proportions = true,
