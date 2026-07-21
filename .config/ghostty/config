@@ -1,9 +1,21 @@
+# Общие настройки
 font-size = 10
 background-opacity = 0.8
 theme = Catppuccin Macchiato
 window-inherit-working-directory = false
 shell-integration = zsh
 
+# Полное разрешение на чтение и запись без запросов
+clipboard-read = allow
+clipboard-write = allow
+
+# Отключает всплывающие уведомления "Copied to clipboard" (тосты)
+app-notifications = no-clipboard-copy
+
+# Отключает предупреждение "Pasting this text may be dangerous" при вставке
+clipboard-paste-protection = false
+
+# Бинды
 keybind = ctrl+shift+q=unbind
 keybind = ctrl+shift+e=unbind
 keybind = ctrl+enter=unbind
