@@ -5,4 +5,5 @@ window-inherit-working-directory = false
 shell-integration = zsh
 
 keybind = ctrl+shift+q=unbind
+keybind = ctrl+shift+e=unbind
 keybind = ctrl+enter=unbind
