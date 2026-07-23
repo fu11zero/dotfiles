@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ""
 
 -- Basic
 require('core.autosave')
@@ -10,11 +10,11 @@ require('core.configs')
 require('core.emmets')
 require('core.filetypes')
 require('core.git')
-require('core.generators')
 require('core.clipboard')
 -- disabled require('core.autocorrection')
 
 -- Custom
+require('custom.id')
 require('custom.angular')
 
 -- Plugins
