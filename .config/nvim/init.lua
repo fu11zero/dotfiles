@@ -10,11 +10,14 @@ require('core.configs')
 require('core.emmets')
 require('core.filetypes')
 require('core.git')
+require('core.generators')
 require('core.clipboard')
 -- disabled require('core.autocorrection')
 
+-- Custom
+require('custom.angular')
+
 -- Plugins
-require('plugins.angular')
 require('plugins.autolayout')
 require('plugins.mini')
 require('plugins.nvim-tree')

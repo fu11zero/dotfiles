@@ -337,7 +337,7 @@ require("lazy").setup({
         { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
         { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
         -- { "<leader>N", function() Snacks.picker.notifications() end, desc = "Notification History" },
-        { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
+        -- { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
         { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
         { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
         { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
