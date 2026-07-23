@@ -79,7 +79,7 @@ require("nvim-tree").setup({
             end
         end
 
-        local ng = require("plugins.angular")
+        local ng = require("custom.angular")
 
         local mappings = {
             -- BEGIN_DEFAULT_ON_ATTACH
