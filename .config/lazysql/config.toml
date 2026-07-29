@@ -53,14 +53,27 @@ DBName = 'universities'
 Schemas = ['public']
 
 [[database]]
-Name = 'startup.local'
+Name = 'monitoring.apc.dev'
+URL = 'pgsql://app-user:L%40R%25wYvrx%7BcCR3Td@localhost:${port}/postgres?sslmode=disable'
+Provider = 'postgres'
+DBName = 'postgres'
+Schemas = ['public']
+
+[[database.Commands]]
+Command = 'ssh -tt -L ${port}:backend-dev-postgres-service.apc-monitoring.svc.cluster.local:5432 -p 30022 root@k8s.unitcode.dev'
+WaitForPort = '${port}'
+SaveOutputTo = ''
+Timeout = 0
+
+[[database]]
+Name = 'startup.apc.local'
 URL = 'pgsql://startup:startup-factory@127.0.0.1:25432/startup?sslmode=disable'
 Provider = 'postgres'
 DBName = 'startup'
 Schemas = ['public']
 
 [[database]]
-Name = 'startup.dev'
+Name = 'startup.apc.dev'
 URL = 'pgsql://app-user:ZlmsaOKBGwhgh7rjpZJ2@localhost:${port}/postgres?sslmode=disable'
 Provider = 'postgres'
 DBName = 'postgres'
