@@ -95,3 +95,53 @@ desc = "Archive selected files (password+header+level)"
 on   = [ "e", "f" ]
 run  = 'shell "yazi-video-to-frames \"$1\"" --block=false'
 desc = "Конвертировать видео в кадры для Meshroom"
+
+[[mgr.prepend_keymap]]
+on   = [ "y", "y" ]
+run  = "yank"
+desc = "Пометить файлы для копирования (Yank)"
+
+[[mgr.prepend_keymap]]
+on   = [ "y", "Y" ]
+run  = "unyank"
+desc = "Убрать метку для копирования (Yank)"
+
+[[mgr.prepend_keymap]]
+on   = [ "y", "p" ]
+run  = "copy path"
+desc = "Копировать абсолютный путь"
+
+[[mgr.prepend_keymap]]
+on   = [ "y", "d" ]
+run  = "copy dirname"
+desc = "Копировать путь к директории"
+
+[[mgr.prepend_keymap]]
+on   = [ "y", "f" ]
+run  = "copy filename"
+desc = "Копировать имя файла"
+
+[[mgr.prepend_keymap]]
+on   = [ "y", "n" ]
+run  = "copy name_without_ext"
+desc = "Копировать имя файла без расширения"
+
+[[mgr.prepend_keymap]]
+on   = [ "d", "d" ]
+run  = "yank --cut"
+desc = "Вырезать выбранные файлы (Cut)"
+
+[[mgr.prepend_keymap]]
+on   = [ "d", "t" ]
+run  = "remove"
+desc = "Переместить выбранные файлы в корзину"
+
+[[mgr.prepend_keymap]]
+on   = [ "d", "p" ]
+run  = "remove --permanently"
+desc = "Удалить файлы навсегда (безвозвратно)"
+
+[[mgr.prepend_keymap]]
+on   = [ "d", "D" ]
+run  = "unyank"
+desc = "Убрать метку для перемещения (Cut)"
