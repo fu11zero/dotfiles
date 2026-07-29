@@ -89,8 +89,8 @@ require("nvim-tree").setup({
             return vim.fs.dirname(node.absolute_path)
         end
 
-        local function smart_find_under_cursor()
-            Snacks.picker.smart({ cwd = get_cursor_dir() })
+        local function files_find_under_cursor()
+            Snacks.picker.files({ cwd = get_cursor_dir() })
         end
 
         local function grep_under_cursor()
@@ -108,7 +108,7 @@ require("nvim-tree").setup({
             ["<C-v>"] = { api.node.open.vertical, "Open: Vertical Split" },
             ["<C-x>"] = { api.node.open.horizontal, "Open: Horizontal Split" },
             ["<BS>"] = { api.node.navigate.parent_close, "Close Directory" },
-            ["<leader><space>"] = { smart_find_under_cursor, "Smart Find (cursor dir)" },
+            ["<leader><space>"] = { files_find_under_cursor, "Files Find (cursor dir)" },
             ["<leader>/"] = { grep_under_cursor, "Grep (cursor dir)" },
             ["<CR>"] = { api.node.open.edit, "Open" },
             ["<Tab>"] = { api.node.open.preview, "Open Preview" },
