@@ -81,6 +81,22 @@ require("nvim-tree").setup({
 
         local ng = require("custom.angular")
 
+        local function get_cursor_dir()
+            local node = api.tree.get_node_under_cursor()
+            if node.type == "directory" then
+                return node.absolute_path
+            end
+            return vim.fs.dirname(node.absolute_path)
+        end
+
+        local function smart_find_under_cursor()
+            Snacks.picker.smart({ cwd = get_cursor_dir() })
+        end
+
+        local function grep_under_cursor()
+            Snacks.picker.grep({ cwd = get_cursor_dir() })
+        end
+
         local mappings = {
             -- BEGIN_DEFAULT_ON_ATTACH
             -- ["C"] = { api.tree.change_root_to_node, "CD" },
@@ -92,6 +108,8 @@ require("nvim-tree").setup({
             ["<C-v>"] = { api.node.open.vertical, "Open: Vertical Split" },
             ["<C-x>"] = { api.node.open.horizontal, "Open: Horizontal Split" },
             ["<BS>"] = { api.node.navigate.parent_close, "Close Directory" },
+            ["<leader><space>"] = { smart_find_under_cursor, "Smart Find (cursor dir)" },
+            ["<leader>/"] = { grep_under_cursor, "Grep (cursor dir)" },
             ["<CR>"] = { api.node.open.edit, "Open" },
             ["<Tab>"] = { api.node.open.preview, "Open Preview" },
             [">"] = { api.node.navigate.sibling.next, "Next Sibling" },
