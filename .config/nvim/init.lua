@@ -31,7 +31,7 @@ require('plugins.mason')
 -- require('plugins.dashboard') -- replaced by snacks.dashboard
 require('plugins.flatten')
 require('plugins.k9s')
--- require('plugins.colorizer')
+require('plugins.colorizer')
 require('plugins.lualine')
 require('plugins.comment')
 require('plugins.opencode')
