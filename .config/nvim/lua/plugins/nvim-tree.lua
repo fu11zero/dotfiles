@@ -10,7 +10,7 @@ require("nvim-tree").setup({
         },
     },
     renderer = {
-        -- root_folder_label = "",
+        root_folder_label = false,
         indent_markers = {
             enable = true, -- включает линии отступа (вложенности)
             inline_arrows = true, -- стрелки папок будут на одной линии с маркерами (рекомендуется)
