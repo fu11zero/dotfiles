@@ -17,9 +17,6 @@ vim.keymap.set('n', '<C-S-E>', ':NvimTreeToggle<CR>')
 -- vim.keymap.set('n', '<C-e>', function() Snacks.explorer.reveal() end, { desc = 'Reveal in Explorer' })
 -- vim.keymap.set('n', '<C-S-E>', function() Snacks.explorer() end, { desc = 'Toggle Explorer' })
 
--- LazySQL
-vim.keymap.set("n", "<leader>s", "<cmd>LazySql<CR>", { desc = "Database LazySQL", noremap = true, silent = true })
-
 -- LazyDocker
 vim.keymap.set("n", "<leader>d", "<cmd>lua LazyDocker.toggle()<CR>", { desc = "Toggle LazyDocker", noremap = true, silent = true })
 

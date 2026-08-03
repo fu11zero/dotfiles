@@ -16,6 +16,7 @@ require('core.clipboard')
 -- Custom
 require('custom.id')
 require('custom.angular')
+require('custom.database')
 
 -- Plugins
 require('plugins.autolayout')

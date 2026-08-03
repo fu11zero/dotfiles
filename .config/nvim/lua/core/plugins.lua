@@ -208,12 +208,6 @@ require("lazy").setup({
     },
 
     {
-      "LostbBlizzard/lazysql.nvim",
-      opts = {},
-      dependencies = { "MunifTanjim/nui.nvim" }
-    },
-
-    {
         "crnvl96/lazydocker.nvim",
         event = 'VeryLazy',
         opts = {
