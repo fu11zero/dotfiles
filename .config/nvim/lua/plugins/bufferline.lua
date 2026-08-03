@@ -79,6 +79,66 @@ require("bufferline").setup{
     },
 }
 
+-- ПАТЧ bufferline: исправляет расчёт ширины offset (см. ниже)
+local offset_mod = require("bufferline.offset")
+local utils = require("bufferline.utils")
+
+-- bufferline меряет текст offset через nvim_strwidth(), который не понимает
+-- statusline-эскейпы %#...# и %* и считает их как обычные символы. Из-за этого
+-- видимый offset уже окна nvim-tree. Здесь измеряем только видимую ширину.
+local function visible_width(s)
+    if not s then return 0 end
+    s = s:gsub("%%#.-#", "")
+    s = s:gsub("%%%*", "")
+    return vim.api.nvim_strwidth(s)
+end
+
+-- Копия внутренней get_section_text из bufferline/offset.lua с заменой
+-- api.nvim_strwidth(text) на visible_width(text).
+local function fixed_get_section_text(size, highlight, offset, is_left)
+    local text = offset.text
+    if type(text) == "function" then text = text() end
+    text = text or string.rep(" ", size - 2)
+
+    local text_size, left, right = visible_width(text), 0, 0
+    local alignment = offset.text_align or "center"
+
+    if text_size + 2 >= size then
+        text, left, right = utils.truncate_name(text, size - 2), 1, 1
+    else
+        local remainder = size - text_size
+        local is_even, side = remainder % 2 == 0, remainder / 2
+        if alignment == "center" then
+            if not is_even then
+                left, right = math.ceil(side), math.floor(side)
+            else
+                left, right = side, side
+            end
+        elseif alignment == "left" then
+            left, right = 1, remainder - 1
+        else
+            left, right = remainder - 1, 1
+        end
+    end
+    local str = highlight.text .. string.rep(" ", left) .. text .. string.rep(" ", right)
+    if not offset.separator then return str end
+
+    local sep_icon = type(offset.separator) == "string" and offset.separator or "│"
+    local sep = highlight.sep .. sep_icon
+    return (not is_left and sep or "") .. str .. (is_left and sep or "")
+end
+
+-- Подменяем локальную функцию get_section_text в загруженном модуле
+-- bufferline.offset через upvalue (наружу она не экспортируется).
+for i = 1, 41 do
+    local name = debug.getupvalue(offset_mod.get, i)
+    if not name then break end
+    if name == "get_section_text" then
+        debug.setupvalue(offset_mod.get, i, fixed_get_section_text)
+        break
+    end
+end
+
 vim.keymap.set('n','<M-l>', ':BufferLineCycleNext<CR>')
 vim.keymap.set('n','<M-h>', ':BufferLineCyclePrev<CR>')
 vim.keymap.set('n','<M-S-l>', ':BufferLineMoveNext<CR>')
