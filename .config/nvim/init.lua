@@ -14,6 +14,7 @@ require('core.clipboard')
 -- disabled require('core.autocorrection')
 
 -- Custom
+require('custom.readme')
 require('custom.id')
 require('custom.angular')
 require('custom.database')
