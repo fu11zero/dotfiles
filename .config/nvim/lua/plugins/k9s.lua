@@ -17,6 +17,7 @@ local function open_floating_terminal(cmd)
     -- Если тогл еще ни разу не вызывался — создаем его
     if not k9s_toggle then
         k9s_toggle = Snacks.terminal.toggle(cmd, {
+            auto_close = false,
             win = {
                 wo = { winfixbuf = true },
                 position = "float",
@@ -51,17 +52,11 @@ local function open_floating_terminal(cmd)
             buffer = buf,
             callback = function()
                 vim.schedule(function()
-                    -- Проверяем, существует ли еще окно, и закрываем его
-                    if vim.api.nvim_win_is_valid(win) then
-                        vim.api.nvim_win_close(win, true)
+                    -- Принудительно закрываем окно и буфер терминала
+                    if k9s_toggle then
+                        k9s_toggle:close()
+                        k9s_toggle = nil
                     end
-
-                    -- Принудительно удаляем буфер терминала, чтобы он не висел в списке (:ls)
-                    if vim.api.nvim_buf_is_valid(buf) then
-                        vim.api.nvim_buf_delete(buf, { force = true })
-                    end
-
-                    k9s_toggle = nil
                 end)
             end
         })
