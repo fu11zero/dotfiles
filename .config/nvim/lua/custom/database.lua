@@ -4,7 +4,7 @@
 local lazysql_toggle = nil
 
 -- Глобальный хоткей для управления окном (работает в Normal и Terminal режимах)
-vim.keymap.set({ "n", "t" }, "<leader>s", function()
+vim.keymap.set({ "n" }, "<leader>s", function()
     -- Если тогл еще ни разу не вызывался — создаем его
     if not lazysql_toggle then
         lazysql_toggle = Snacks.terminal.toggle("lazysql", {
