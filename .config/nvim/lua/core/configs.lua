@@ -47,6 +47,7 @@ vim.opt.incsearch = true               -- Интерактивный поиск
 -- Mouse
 vim.opt.mouse = "a"                    -- Возможность использовать мышку
 vim.opt.mousefocus = true
+vim.opt.pumborder = "rounded"
 
 -- Line Numbers
 vim.opt.number = true                  -- Показывает номера строк
