@@ -25,36 +25,6 @@ require("lazy").setup({
     },
 
     {
-        "gbprod/yanky.nvim",
-        dependencies = {
-            { "kkharji/sqlite.lua" }
-        },
-        opts = {
-            ring = { storage = "sqlite" },
-        },
-        keys = {
-            { "<leader>p", "<cmd>YankyRingHistory<cr>", mode = { "n", "x" }, desc = "Open Yank History" },
-            { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank text" },
-            { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor" },
-            { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before cursor" },
-            -- { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor and leave cursor after" },
-            -- { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before cursor and leave cursor after " },
-            -- { "<c-p>", "<Plug>(YankyPreviousEntry)", desc = "Select previous entry through yank history" },
-            -- { "<c-n>", "<Plug>(YankyNextEntry)", desc = "Select next entry through yank history" },
-            -- { "]p", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put indented after cursor (linewise)" },
-            -- { "[p", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put indented before cursor (linewise)" },
-            -- { "]P", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put indented after cursor (linewise)" },
-            -- { "[P", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put indented before cursor (linewise)" },
-            -- { ">p", "<Plug>(YankyPutIndentAfterShiftRight)", desc = "Put and indent right" },
-            -- { "<p", "<Plug>(YankyPutIndentAfterShiftLeft)", desc = "Put and indent left" },
-            -- { ">P", "<Plug>(YankyPutIndentBeforeShiftRight)", desc = "Put before and indent right" },
-            -- { "<P", "<Plug>(YankyPutIndentBeforeShiftLeft)", desc = "Put before and indent left" },
-            -- { "=p", "<Plug>(YankyPutAfterFilter)", desc = "Put after applying a filter" },
-            -- { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put before applying a filter" },
-        },
-    },
-
-    {
         "nvim-treesitter/nvim-treesitter",
         dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
         build = ":TSUpdate",
@@ -74,10 +44,6 @@ require("lazy").setup({
 
     { "tpope/vim-abolish" },
     { "nvimtools/hydra.nvim" },
-
-    -- { 'nvim-telescope/telescope.nvim', tag = 'v0.2.0',
-    --   dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-ui-select.nvim' }
-    -- },
 
     {
         'nat-418/boole.nvim',
@@ -176,14 +142,6 @@ require("lazy").setup({
             })
         end
     },
-
-    -- {
-    --   "3rd/diagram.nvim",
-    --   dependencies = {
-    --     { "3rd/image.nvim", opts = {} },
-    --   },
-    --   keys = { ... },
-    -- },
 
     {
         "wellle/targets.vim",
@@ -311,11 +269,15 @@ require("lazy").setup({
         terminal = { enabled = true },
         image = {
           enabled = true,
-          processor = "magick_cli",
-          formats = { "png", "jpg", "jpeg", "gif", "bmp", "webp", "tiff", "heic", "avif", "mp4", "mov", "avi", "mkv", "webm", "pdf", "icns" },
+          -- processor = "magick_cli",
+          -- formats = { "png", "jpg", "jpeg", "gif", "bmp", "webp", "tiff", "heic", "avif", "mp4", "mov", "avi", "mkv", "webm", "pdf", "icns" },
         },
         bufdelete = { enabled = true },
         git = { enabled = true },
+        gh = {
+            enabled = true,
+            highlights = { enabled = false }
+        },
         gitbrowse = { enabled = true },
         rename = { enabled = true },
         zen = { enabled = true },
@@ -332,13 +294,19 @@ require("lazy").setup({
         { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
         { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
         { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
+        { "<leader>;", function() Snacks.picker.resume() end, desc = "Resme previous picker" },
+        { "<leader>t", function() Snacks.picker.todo_comments() end, desc = "Open TODO picker" },
+        { "<leader>h", function() Snacks.picker.undo() end, desc = "Open history" },
+        { "<leader>m", function() Snacks.picker.marks({global = false, ['local'] = true}) end, desc = "Command History" },
+        { "<leader>M", function() Snacks.picker.marks({global = true, ['local'] = false}) end, desc = "Command History" },
         -- { "<leader>N", function() Snacks.picker.notifications() end, desc = "Notification History" },
         -- { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
-        { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
-        { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
+        -- { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
+        { "<leader>r", function() Snacks.picker.recent({ filter = { cwd = true }}) end, desc = "Recent" },
         -- { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
         -- { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
         { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
+        { "g*", function() Snacks.picker.grep_word() end, desc = "Git Branches" },
         -- { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
         -- { "<leader>sc", function() Snacks.picker.command_history() end, desc = "Command History" },
         { "<leader>gd", function() Snacks.picker.diagnostics_bufffer() end, desc = "Diagnostics" },
@@ -382,30 +350,52 @@ require("lazy").setup({
     },
 
     {
-        'topaxi/pipeline.nvim',
-        keys = {
-            { '<leader>ci', '<cmd>Pipeline<cr>', desc = 'Open pipeline.nvim' },
-        },
-        -- build = 'make',
-        ---@type pipeline.Config
+        "joryeugene/dadbod-grip.nvim",
+        version = "*",
         opts = {
-            providers = {
-                gitlab = {
-                    default_host = 'gitlab.unitcode.ru',
-                },
-            },
-            allowed_hosts={
-                'gitlab.unitcode.ru'
-            }
+            limit            = 22,      -- default row limit for SELECT queries
+            -- max_col_width    = 40,       -- max display width per column
+            -- timeout          = 30000,    -- query timeout in ms (default: 10000; raise for slow tunnels)
+            -- completion       = true,     -- set false to use blink.cmp/nvim-cmp instead
+            -- connections_path = nil,      -- absolute path to a shared connections.json file
+            border           = "rounded",
+            picker           = "builtin",-- "builtin", "telescope", or "snacks"
+            cell_split       = "horizontal", -- gB cell buffer: "horizontal" or "vertical" split
+            sticky_header    = true,     -- keep the column names visible while scrolling (set false to reclaim the line)
         }
-    }
+    },
+
+    -- {
+    --     "sphamba/smear-cursor.nvim",
+    --     opts = {
+    --         smear_between_buffers = true,
+    --         smear_between_neighbor_lines = true,
+    --         scroll_buffer_space = true,
+    --         legacy_computing_symbols_support = false,
+    --         smear_insert_mode = true,
+    --         time_interval = 7,
+    --
+    --         -- stiffness = 0.8,                      -- 0.6      [0, 1]
+    --         -- trailing_stiffness = 0.6,             -- 0.45     [0, 1]
+    --         -- stiffness_insert_mode = 0.7,          -- 0.5      [0, 1]
+    --         -- trailing_stiffness_insert_mode = 0.7, -- 0.5      [0, 1]
+    --         -- damping = 0.95,                       -- 0.85     [0, 1]
+    --         -- damping_insert_mode = 0.95,           -- 0.9      [0, 1]
+    --         -- distance_stop_animating = 0.5,        -- 0.1      > 0
+    --     },
+    -- }
+
+    -- {
+    --     "harrisoncramer/gitlab.nvim",
+    --     -- branch = "main", -- Uncomment to use a stable version. The default, possibly unstable, but more actively maintained branch is `develop`.
+    --     dependencies = {
+    --         "MunifTanjim/nui.nvim",
+    --         "dlyongemallo/diffview-plus.nvim", -- Maintained fork of "sindrets/diffview.nvim".
+    --         "stevearc/dressing.nvim", -- Recommended but not required. Better UI for pickers.
+    --         "nvim-tree/nvim-web-devicons", -- Recommended but not required. Icons in discussion tree.
+    --     },
+    --     ---@type GitlabSettings
+    --     opts = {}, -- Your configuration
+    -- }
 
 })
-
--- require('lualine').setup({
---   sections = {
---     lualine_a = {
---       { 'pipeline' },
---     },
---   }
--- })
