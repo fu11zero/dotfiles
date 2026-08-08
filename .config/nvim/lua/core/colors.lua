@@ -1,6 +1,5 @@
 
 function SetColor()
-
     require("catppuccin").setup({
         transparent_background = true, -- включает прозрачность для всех стандартных групп
     })
@@ -15,7 +14,8 @@ function SetColor()
     }
 
     for _, group in ipairs(groups) do
-        vim.api.nvim_set_hl(0, group, { bg = "none" })
+        local normal = vim.api.nvim_get_hl(0, { name = group })
+        vim.api.nvim_set_hl(0, group, { fg = normal.fg, bg = "none" })
     end
 end
 

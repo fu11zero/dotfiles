@@ -26,10 +26,7 @@ require('plugins.nvim-tree')
 require('plugins.treesitter')
 require('plugins.lsp')
 require('plugins.cmp')
--- require('plugins.glim')      -- requires toggleterm
 require('plugins.mason')
--- require('plugins.mermaid')
--- require('plugins.telescope') -- replaced by snacks.picker
 -- require('plugins.dashboard') -- replaced by snacks.dashboard
 require('plugins.flatten')
 require('plugins.k9s')
