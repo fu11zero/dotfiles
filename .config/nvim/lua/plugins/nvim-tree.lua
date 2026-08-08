@@ -81,6 +81,21 @@ require("nvim-tree").setup({
 
         local ng = require("custom.angular")
 
+        local function grip()
+            local node = api.tree.get_node_under_cursor()
+
+            -- Проверяем, что под курсором файл, а не папка
+            if node and node.type == "file" then
+                -- Получаем относительный путь файла от корня проекта
+                local relative_path = vim.fn.fnamemodify(node.absolute_path, ":.")
+
+                -- Выполняем команду Neovim: Grip ./относительный_путь
+                vim.cmd("Grip ./" .. relative_path)
+            else
+                vim.notify("Grip можно запустить только для файлов", vim.log.levels.WARN)
+            end
+        end
+
         local function get_cursor_dir()
             local node = api.tree.get_node_under_cursor()
             if node.type == "directory" then
@@ -135,7 +150,8 @@ require("nvim-tree").setup({
             ["K"] = { api.node.navigate.sibling.first, "First Sibling" },
             ["m"] = { api.marks.toggle, "Toggle Bookmark" },
             ["o"] = { api.node.open.edit, "Open" },
-            ["O"] = { api.node.open.no_window_picker, "Open: No Window Picker" },
+            -- ["O"] = { api.node.open.no_window_picker, "Open: No Window Picker" },
+            ["O"] = { grip, "Help" },
             ["p"] = { api.fs.paste, "Paste" },
             ["P"] = { api.node.navigate.parent, "Parent Directory" },
             ["q"] = { api.tree.close, "Close" },
