@@ -17,6 +17,9 @@ vim.keymap.set('n', '<C-S-E>', ':NvimTreeToggle<CR>')
 -- vim.keymap.set('n', '<C-e>', function() Snacks.explorer.reveal() end, { desc = 'Reveal in Explorer' })
 -- vim.keymap.set('n', '<C-S-E>', function() Snacks.explorer() end, { desc = 'Toggle Explorer' })
 
+vim.keymap.set('n', '<leader>p', Snacks.picker.cliphist, { desc = "История буфера обмена", noremap = true, silent = true })
+vim.keymap.set({'n', 'v'}, '<leader>ic', Snacks.picker.icons, { desc = "Выбор иконки", noremap = true, silent = true } )
+
 -- LazyDocker
 vim.keymap.set("n", "<leader>d", "<cmd>lua LazyDocker.toggle()<CR>", { desc = "Toggle LazyDocker", noremap = true, silent = true })
 
