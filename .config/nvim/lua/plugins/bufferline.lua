@@ -138,6 +138,8 @@ for i = 1, 41 do
         break
     end
 end
+-- /ПАТЧ bufferline: исправляет расчёт ширины offset (см. ниже)
+
 
 vim.keymap.set('n','<M-l>', ':BufferLineCycleNext<CR>')
 vim.keymap.set('n','<M-h>', ':BufferLineCyclePrev<CR>')
