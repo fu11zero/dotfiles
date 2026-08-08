@@ -40,9 +40,9 @@ local function insert(gen)
 end
 
 -- Клавиши
-vim.keymap.set({'n', 'v'}, '<leader>id', function() insert(enf_id) end)
-vim.keymap.set({'n', 'v'}, '<leader>gid', function() insert(enf_guid) end)
-vim.keymap.set({'n', 'v'}, '<leader>uu', function() insert(uuid4) end)
-vim.keymap.set({'n', 'v'}, '<leader>u4', function() insert(uuid4) end)
-vim.keymap.set({'n', 'v'}, '<leader>u7', function() insert(uuid7) end)
+vim.keymap.set({'n', 'v'}, '<leader>id', function() insert(enf_id) end, { desc = "Generate 16 digits hex ID", noremap = true, silent = true } )
+vim.keymap.set({'n', 'v'}, '<leader>gid', function() insert(enf_guid) end, { desc = "Generate {16 digits hex ID}", noremap = true, silent = true } )
+vim.keymap.set({'n', 'v'}, '<leader>uu', function() insert(uuid4) end, { desc = "Generate uuid4", noremap = true, silent = true } )
+vim.keymap.set({'n', 'v'}, '<leader>u4', function() insert(uuid4) end, { desc = "Generate uuid4", noremap = true, silent = true } )
+vim.keymap.set({'n', 'v'}, '<leader>u7', function() insert(uuid7) end, { desc = "Generate uuid7", noremap = true, silent = true } )
 
