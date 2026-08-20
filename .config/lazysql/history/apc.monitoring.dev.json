@@ -1,0 +1,22 @@
+[
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'SPO1' @\u003e path ORDER BY name ASC LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-08-20T13:28:23.817261403Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"structure\" SET \"name\" = 'СПО-1' WHERE \"id\" = '4001'",
+    "Timestamp": "2026-08-20T13:28:23.333699484Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'SPO1' @\u003e path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-08-20T13:24:01.257138549Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'SPO1' \u003c@ path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-08-20T13:23:52.021293866Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'SPO1' \u003c= path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-08-20T13:22:44.035930037Z"
+  }
+]

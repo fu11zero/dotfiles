@@ -1,0 +1,42 @@
+[
+  {
+    "QueryText": "UPDATE \"public\".\"university\" SET \"name\" = 'Федеральное государственное бюджетное образовательное учреждение высшего образования «Брянский государственный аграрный университет»' WHERE \"id\" = '1'",
+    "Timestamp": "2026-08-19T06:11:07.429111653Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"university\" SET \"name\" = 'Федеральное государственное бюджетное образовательное учреждение высшего образования «Брянский государственный аграрныйуниверситет»' WHERE \"id\" = '1'",
+    "Timestamp": "2026-08-19T06:08:56.658970676Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"university\" SET \"short_name\" = 'Брянский ГАУ' WHERE \"id\" = '1'",
+    "Timestamp": "2026-08-19T06:03:55.415632767Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"university\" SET \"name\" = 'Федеральное государственное бюджетное образовательное учреждение высшего образования «Брянскийгосударственный аграрный университет»' WHERE \"id\" = '1'",
+    "Timestamp": "2026-08-19T06:03:55.415370997Z"
+  },
+  {
+    "QueryText": "INSERT INTO \"public\".\"university\" (id, address, okpo_code, external_id, name, short_name, code, type, is_deleted, parent_id) VALUES (DEFAULT, DEFAULT, DEFAULT, DEFAULT, 'Федеральное государственное бюджетное образовательное учреждение высшего образования \"Арктический государственный агротехнологический университет\"', 'sld', DEFAULT, DEFAULT, DEFAULT, DEFAULT)",
+    "Timestamp": "2026-08-19T05:54:54.829278373Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"report\" SET \"submission_start\" = '2026-07-01T00:00:00Z' WHERE \"id\" = '6'",
+    "Timestamp": "2026-08-19T05:53:06.998958695Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"source_file\" WHERE \"id\" = '1'",
+    "Timestamp": "2026-07-15T06:39:43.033380043Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE row = 8276 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-07-10T08:32:40.917303084Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"source_file\" WHERE \"id\" = '1'",
+    "Timestamp": "2026-07-10T05:56:27.344703071Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"university\" WHERE \"id\" = '1'",
+    "Timestamp": "2026-07-10T05:56:19.986713485Z"
+  }
+]

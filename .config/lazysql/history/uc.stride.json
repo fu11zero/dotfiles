@@ -1,0 +1,58 @@
+[
+  {
+    "QueryText": "SELECT * FROM \"task_tracker\".\"tasks\" WHERE epic_id IS NULL LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-08-18T13:05:28.468494261Z"
+  },
+  {
+    "QueryText": "select\n    time_tracks.id,\n    time_tracks.comment,\n    assignees.spec,\n    tasks.type,\n    tasks.name AS task_name,\n    tasks.priority,\n    epics.name AS epic_name,\n    epics.project_id\nFROM task_tracker.time_tracks\n    LEFT OUTER JOIN task_tracker.assignees ON assignees.id = time_tracks.assignee_id\n    LEFT OUTER JOIN task_tracker.tasks ON tasks.id = assignees.task_id\n    LEFT OUTER JOIN task_tracker.epics ON epics.id = tasks.epic_id\n    LEFT OUTER JOIN task_tracker.projects ON projects.id = epics.project_id\nWHERE epics.project_id IS NULL\n",
+    "Timestamp": "2026-08-18T12:10:34.128130916Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"task_tracker\".\"epics\" WHERE project_id IS NULL LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-08-18T12:09:39.687238711Z"
+  },
+  {
+    "QueryText": "select\n    time_tracks.id,\n    time_tracks.comment,\n    assignees.spec,\n    tasks.type,\n    tasks.name,\n    tasks.priority,\n    epics.name,\n    epics.project_id\nFROM task_tracker.time_tracks\n    LEFT OUTER JOIN task_tracker.assignees ON assignees.id = time_tracks.assignee_id\n    LEFT OUTER JOIN task_tracker.tasks ON tasks.id = assignees.task_id\n    LEFT OUTER JOIN task_tracker.epics ON epics.id = tasks.epic_id\n    LEFT OUTER JOIN task_tracker.projects ON projects.id = epics.project_id\nWHERE epics.project_id IS NULL\n",
+    "Timestamp": "2026-08-18T12:08:44.653701411Z"
+  },
+  {
+    "QueryText": "select time_tracks.id, epics.project_id\nFROM task_tracker.time_tracks\n    LEFT OUTER JOIN task_tracker.assignees ON assignees.id = time_tracks.assignee_id\n    LEFT OUTER JOIN task_tracker.tasks ON tasks.id = assignees.task_id\n    LEFT OUTER JOIN task_tracker.epics ON epics.id = tasks.epic_id\n    LEFT OUTER JOIN task_tracker.projects ON projects.id = epics.project_id\nWHERE epics.project_id IS NULL\n",
+    "Timestamp": "2026-08-18T12:05:39.976725413Z"
+  },
+  {
+    "QueryText": "select *\nFROM task_tracker.time_tracks\n    LEFT OUTER JOIN task_tracker.assignees ON assignees.id = time_tracks.assignee_id\n    LEFT OUTER JOIN task_tracker.tasks ON tasks.id = assignees.task_id\n    LEFT OUTER JOIN task_tracker.epics ON epics.id = tasks.epic_id\n    LEFT OUTER JOIN task_tracker.projects ON projects.id = epics.project_id\nWHERE epics.project_id IS NULL\n",
+    "Timestamp": "2026-08-18T12:04:43.016251447Z"
+  },
+  {
+    "QueryText": "select *\nFROM task_tracker.time_tracks\n    LEFT OUTER JOIN task_tracker.assignees ON assignees.id = time_tracks.assignee_id\n    LEFT OUTER JOIN task_tracker.tasks ON tasks.id = assignees.task_id\n    LEFT OUTER JOIN task_tracker.epics ON epics.id = tasks.epic_id\n    LEFT OUTER JOIN task_tracker.projects ON projects.id = epics.project_id\n",
+    "Timestamp": "2026-08-18T12:03:49.562908181Z"
+  },
+  {
+    "QueryText": " \nselect *\nFROM task_tracker.time_tracks\n    JOIN task_tracker.assignees ON assignees.id = time_tracks.assignee_id\n    JOIN task_tracker.tasks ON tasks.id = assignees.task_id\n    JOIN task_tracker.epics ON epics.id = tasks.epic_id\n    JOIN task_tracker.projects ON projects.id = epics.project_id\n",
+    "Timestamp": "2026-08-18T12:02:47.785482233Z"
+  },
+  {
+    "QueryText": "SET search_path TO task_tracker, public;\n\nselect tt.id\nFROM time_tracks AS tt\n    JOIN assignees ON assignees.id = tt.assignee_id\n    JOIN tasks ON tasks.id = assignees.task_id\n    JOIN epics ON epics.id = tasks.epic_id\n    JOIN projects ON projects.id = epics.project_id\n",
+    "Timestamp": "2026-08-18T11:56:44.16391882Z"
+  },
+  {
+    "QueryText": "SET search_path TO task_tracker, public;\n\nselect *\nFROM time_tracks AS tt\n    JOIN assignees ON assignees.id = tt.assignee_id\n    JOIN tasks ON tasks.id = assignees.task_id\n    JOIN epics ON epics.id = tasks.epic_id\n    JOIN projects ON projects.id = epics.project_id\n",
+    "Timestamp": "2026-08-18T11:56:26.583379957Z"
+  },
+  {
+    "QueryText": "SET search_path TO task_tracker, public;\n\nselect *\nFROM time_tracks\n    JOIN assignees ON assignees.id = time_tracks.assignee_id\n    JOIN tasks ON tasks.id = assignees.task_id\n    JOIN epics ON epics.id = tasks.epic_id\n    JOIN projects ON projects.id = epics.project_id\n",
+    "Timestamp": "2026-08-18T11:55:04.13549261Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"task_tracker\".\"costs\" WHERE \"id\" = '01a00f2d-92bb-77c2-9fe1-b6b6cd9e872e'",
+    "Timestamp": "2026-08-17T13:08:18.909175935Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"task_tracker\".\"costs\" WHERE \"id\" = '01a00ef0-bf0a-72d0-8a7b-96992f184a6b'",
+    "Timestamp": "2026-08-17T09:06:41.996490235Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"task_tracker\".\"costs\" WHERE \"id\" = '019fff99-93f6-7b33-9686-f271d984218d'",
+    "Timestamp": "2026-08-17T09:06:41.996394343Z"
+  }
+]

@@ -1,0 +1,222 @@
+[
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S001.S001' = path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-08T06:54:26.856734513Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE validation_status = 'invalid' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-08T06:47:01.387493002Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE validation is not null LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-08T06:46:20.533758627Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"structure\" SET \"validation\" = '{\n  \"formulas\": [\n    {\n      \"check\": \"C001 = R001.R001.C001 + R001.R002.C001 + R001.R003.C001 + R001.R004.C001\",\n      \"subject\": [\n        \"C001\"\n      ],\n      \"message\": \"сумма строк 02, 03, 04, 09, 13\"\n    },\n    {\n      \"check\": \"C002 = R001.R001.C002 + R001.R002.C002 + R001.R003.C002 + R001.R004.C002 + R001.R005.C002\",\n      \"subject\": [\n        \"C002\"\n      ],\n      \"message\": \"сумма строк 02, 03, 04, 09, 13\"\n    }\n  ]\n}' WHERE \"id\" = '7'",
+    "Timestamp": "2026-06-08T06:46:20.5169524Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE validation_status = 'invalid' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-08T06:45:50.881648742Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE validation_status = 'valid' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-08T06:45:38.480531982Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE validation_status != 'valid' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-08T06:45:25.589512553Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE validation is not null LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-08T06:29:17.082599928Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE validation-\u003e\u003e'formulas' like '%R00%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-05T07:06:38.129731988Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE validation-\u003e\u003e'formulas' like '%SUM%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-05T07:06:29.207867329Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE validation_status != 'valid' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-05T06:58:30.012022701Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"structure\" SET \"validation\" = '{\n  \"formulas\": [\n    {\n      \"check\": \"C001 = R001.R001.C001 + R001.R002.C001 + R001.R003.C001 + R001.R004.C001\",\n      \"subject\": [\n        \"C001\"\n      ],\n      \"message\": \"сумма строк 02, 03, 04, 09, 13\"\n    },\n    {\n      \"check\": \"C002 = R001.R001.C002 + R001.R002.C002 + R001.R003.C002 + R001.R004.C002\",\n      \"subject\": [\n        \"C002\"\n      ],\n      \"message\": \"сумма строк 02, 03, 04, 09, 13\"\n    }\n  ]\n}' WHERE \"id\" = '7'",
+    "Timestamp": "2026-06-05T06:58:17.387022973Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE validation_status != 'valid' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-05T06:57:46.081681816Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"structure\" SET \"validation\" = '{\n  \"formulas\": [\n    {\n      \"check\": \"C001 = R001.R001.C001 + R001.R002.C001 + R001.R003.C001 + R001.R004.C001\",\n      \"subject\": [\n        \"C001\"\n      ],\n      \"message\": \"сумма строк 02, 03, 04, 09, 13\"\n    },\n    {\n      \"check\": \"C002 = R001.R001.C002 + R001.R002.C002 + R001.R003.C002 + R001.R004.C002\",\n      \"subject\": [\n        \"C002\"\n      ],\n      \"message\": \"сумма строк 02, 03, 04, 09, 13\"\n    }\n  ]\n}' WHERE \"id\" = '7'",
+    "Timestamp": "2026-06-04T12:34:44.323026958Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE validation_status != 'valid' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-04T12:33:46.271628101Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"structure\" SET \"validation\" = '{\n  \"formulas\": [\n    {\n      \"check\": \"C001 = R001.R001.C001 + R001.R002.C001 + R001.R003.C001 + R001.R004.C001\",\n      \"subject\": [\n        \"C001\"\n      ],\n      \"message\": \"сумма строк 02, 03, 04, 09, 13\"\n    },\n    {\n      \"check\": \"C002 = R001.R001.C002 + R001.R002.C002 + R001.R003.C002 + R001.R004.C002\",\n      \"subject\": [\n        \"C002\"\n      ],\n      \"message\": \"сумма строк 02, 03, 04, 09, 13\"\n    }\n  ]\n}' WHERE \"id\" = '7'",
+    "Timestamp": "2026-06-04T12:02:37.17308094Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE validation_status != 'valid' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-04T12:00:23.908407969Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"structure\" SET \"validation\" = NULL WHERE \"id\" = '7'",
+    "Timestamp": "2026-06-04T08:28:23.683814541Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S002.S003' @\u003e path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-03T07:22:22.547623984Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE \"column\" = 357 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-03T07:12:17.791951666Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S002.S003' @\u003e path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-03T07:11:39.556777187Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S002.S002' @\u003e path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-03T05:51:10.097379029Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE \"column\" = 110 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-02T06:25:57.808807656Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S002.S002' @\u003e path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-02T06:24:26.541614066Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S002.S003' @\u003e path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-02T06:21:28.917846881Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S002.S002' @\u003e path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-02T06:21:26.211664542Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S001.S002' @\u003e path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-02T06:21:18.459089551Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S001.S002' \u003c@ path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-02T06:21:13.436784575Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S002.S007' \u003c@ path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:59:21.281356889Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S002.S007' @\u003e path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:59:11.924888376Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE path @\u003e 'VPO2.S002.S007' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:58:50.774016633Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE path \u003c@ 'VPO2.S002.S007' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:58:26.081464058Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE path @\u003e 'VPO2.S002.S007' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:58:16.334751193Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S002.S007' \u003c@ path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:57:50.126375531Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2.S002.S007' @\u003e path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:57:44.113834856Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE path @\u003e 'VPO2.S002.S007' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:56:11.727094297Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE path \u003c@ 'VPO2.S002.S007' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:52:51.041917238Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE path @\u003e 'VPO2.S002.S007' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:52:43.990118851Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE path \u003c@ 'VPO2.S002.S007' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:52:18.599453604Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE path @\u003e 'VPO2.S002.S007' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:50:18.064088458Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE path = 'VPO2.S002.S007' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:49:44.251845872Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE path = 'VPO2.S002.S002' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:49:02.743844331Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE path = 'VPO2.S002.S003' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:48:35.880688256Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE path = 'VPO2.S001.S002' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T16:47:44.518447736Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE \"column\" = 29 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-01T15:48:55.960760609Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"structure\" SET \"role\" = 'ATTRIBUTE' WHERE \"id\" = '27'",
+    "Timestamp": "2026-06-01T15:02:20.454477986Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE name = 'Общежития:' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-05-29T13:41:40.845283788Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE name = 'Oбщежития:' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-05-29T12:52:03.247149362Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE name = 'Oбщежития' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-05-29T12:50:58.040467389Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE name = 'общежития' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-05-29T12:50:50.927643714Z"
+  },
+  {
+    "QueryText": "DROP SCHEMA public CASCADE;\nCREATE SCHEMA public;",
+    "Timestamp": "2026-05-27T09:59:30.935898125Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE True LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-05-22T09:17:54.443506707Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE name like '%Раздел 1%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-05-21T21:57:50.514978162Z"
+  },
+  {
+    "QueryText": "-- DROP SCHEMA public CASCADE;\nCREATE SCHEMA public;",
+    "Timestamp": "2026-05-21T18:26:35.444309929Z"
+  },
+  {
+    "QueryText": "DROP SCHEMA public CASCADE;",
+    "Timestamp": "2026-05-21T18:26:11.678561007Z"
+  }
+]

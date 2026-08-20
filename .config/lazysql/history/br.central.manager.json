@@ -1,0 +1,38 @@
+[
+  {
+    "QueryText": "UPDATE \"public\".\"server_pool\" SET \"desired_servers\" = '1' WHERE \"id\" = 'b98f0cf1-2ce1-41ac-a1fd-bf102d676bc5'",
+    "Timestamp": "2026-07-18T17:04:11.009128785Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"server_pool\" SET \"desired_servers\" = '0' WHERE \"id\" = 'b98f0cf1-2ce1-41ac-a1fd-bf102d676bc5'",
+    "Timestamp": "2026-07-16T18:24:21.148593863Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"server_pool\" SET \"desired_servers\" = '1' WHERE \"id\" = 'b98f0cf1-2ce1-41ac-a1fd-bf102d676bc5'",
+    "Timestamp": "2026-07-16T17:51:25.749925605Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"server_pool\" SET \"desired_servers\" = '0' WHERE \"id\" = 'b98f0cf1-2ce1-41ac-a1fd-bf102d676bc5'",
+    "Timestamp": "2026-07-11T13:51:49.492326562Z"
+  },
+  {
+    "QueryText": "INSERT INTO \"public\".\"server_pool\" (id, name, min_servers, max_servers, desired_servers, region, game_mode, map, created_at) VALUES (DEFAULT, 'br-eu', '0', '3', '1', 'eu', 'BATTLE_ROYALE', 'Everon', DEFAULT)",
+    "Timestamp": "2026-07-11T13:32:38.623421374Z"
+  },
+  {
+    "QueryText": "INSERT INTO \"public\".\"server_pool\" (id, name, min_servers, max_servers, desired_servers, region, game_mode, map, created_at) VALUES (DEFAULT, 'br-eu', '1', '5', '1', 'eu', 'BATTLE_ROYALE', 'Everon', DEFAULT)",
+    "Timestamp": "2026-07-09T11:45:37.185787261Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"server_pool\" SET \"region\" = 'dev' WHERE \"id\" = '3de52045-1145-4c20-93ed-d59ed4a1d4d4'",
+    "Timestamp": "2026-07-07T16:55:35.629927991Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"server_pool\" SET \"max_servers\" = '3' WHERE \"id\" = '3de52045-1145-4c20-93ed-d59ed4a1d4d4'",
+    "Timestamp": "2026-07-07T16:32:20.811164176Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"server_pool\" SET \"region\" = 'eu' WHERE \"id\" = '3de52045-1145-4c20-93ed-d59ed4a1d4d4'",
+    "Timestamp": "2026-07-07T16:12:48.80794152Z"
+  }
+]

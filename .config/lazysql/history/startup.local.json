@@ -1,0 +1,90 @@
+[
+  {
+    "QueryText": "DROP SCHEMA public CASCADE;\nCREATE SCHEMA public;\n",
+    "Timestamp": "2026-06-04T06:59:44.356027934Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"idea\" WHERE \"id\" = '5'",
+    "Timestamp": "2026-05-06T07:08:18.593552372Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"idea\" WHERE \"id\" = '4'",
+    "Timestamp": "2026-05-06T07:08:06.677859679Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '4'",
+    "Timestamp": "2026-04-30T07:15:46.807553127Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"user\" WHERE \"id\" = '5'",
+    "Timestamp": "2026-04-30T07:15:38.615629082Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"user\" WHERE \"id\" = '4'",
+    "Timestamp": "2026-04-30T07:15:38.615361244Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"user\" WHERE \"id\" = '3'",
+    "Timestamp": "2026-04-30T07:15:38.615258151Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"user\" WHERE \"id\" = '2'",
+    "Timestamp": "2026-04-30T07:15:38.614089904Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"user\" WHERE \"id\" = '1'",
+    "Timestamp": "2026-04-30T07:15:38.613942424Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startuper\" WHERE \"id\" = '4'",
+    "Timestamp": "2026-04-30T07:15:28.578728469Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"user_role\" WHERE \"id\" = '1'",
+    "Timestamp": "2026-04-30T07:14:45.024934968Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"user_role\" WHERE \"id\" = '6'",
+    "Timestamp": "2026-04-30T07:14:45.024634021Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"user_role\" WHERE \"id\" = '5'",
+    "Timestamp": "2026-04-30T07:14:45.024160849Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"user_role\" WHERE \"id\" = '4'",
+    "Timestamp": "2026-04-30T07:14:45.024046311Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"user_role\" WHERE \"id\" = '3'",
+    "Timestamp": "2026-04-30T07:14:45.023922357Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"user_role\" WHERE \"id\" = '2'",
+    "Timestamp": "2026-04-30T07:14:45.023721635Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '3'",
+    "Timestamp": "2026-04-30T06:10:24.13204392Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startuper\" WHERE \"id\" = '3'",
+    "Timestamp": "2026-04-30T06:10:15.219764884Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '1'",
+    "Timestamp": "2026-04-30T06:09:26.328432428Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '2'",
+    "Timestamp": "2026-04-30T06:09:26.328205024Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startuper\" WHERE \"id\" = '1'",
+    "Timestamp": "2026-04-30T06:09:18.763524889Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startuper\" WHERE \"id\" = '2'",
+    "Timestamp": "2026-04-30T06:09:18.76298798Z"
+  }
+]

@@ -1,0 +1,414 @@
+[
+  {
+    "QueryText": "UPDATE \"public\".\"idea\" SET \"status\" = 'revision' WHERE \"id\" = '3'",
+    "Timestamp": "2026-06-26T09:44:51.93428942Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"idea\" SET \"status\" = 'rejected' WHERE \"id\" = '9'",
+    "Timestamp": "2026-06-26T09:44:51.933485965Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"idea\" SET \"status\" = 'manualModeration' WHERE \"id\" = '4'",
+    "Timestamp": "2026-06-26T09:43:32.288679767Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"idea\" SET \"status\" = 'revision' WHERE \"id\" = '9'",
+    "Timestamp": "2026-06-26T09:43:32.287766881Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"idea\" SET \"status\" = 'aiAnalysis' WHERE \"id\" = '8'",
+    "Timestamp": "2026-06-26T09:43:32.285174909Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"idea\" SET \"status\" = 'aiAnalysis' WHERE \"id\" = '6'",
+    "Timestamp": "2026-06-26T09:43:32.284754915Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%AEF%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-26T09:40:52.998522019Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"status\" = 'REJECTED' WHERE \"id\" = '3'",
+    "Timestamp": "2026-06-26T09:40:52.707451732Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%AEF%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-26T09:40:43.443943768Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%IoT%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-26T09:40:10.390696998Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"idea\" SET \"status\" = 'published' WHERE \"id\" = '9'",
+    "Timestamp": "2026-06-26T09:38:49.619333004Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"idea\" SET \"status\" = 'published' WHERE \"id\" = '8'",
+    "Timestamp": "2026-06-26T09:38:49.618866605Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"idea\" SET \"status\" = 'published' WHERE \"id\" = '7'",
+    "Timestamp": "2026-06-26T09:38:49.61843638Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"idea\" SET \"status\" = 'published' WHERE \"id\" = '6'",
+    "Timestamp": "2026-06-26T09:38:49.615745014Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"idea\" SET \"status\" = 'published' WHERE \"id\" = '5'",
+    "Timestamp": "2026-06-26T09:38:49.615112143Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"invested_project\" WHERE name like '%IoT%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-26T09:28:52.617991132Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%IoT%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-26T09:26:23.082541521Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%iot%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-26T09:26:15.129097981Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE startuper_id = 21 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T14:56:09.268747074Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startuper\" SET \"current_startup_id\" = '1' WHERE \"id\" = '21'",
+    "Timestamp": "2026-06-24T14:55:27.107937244Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"startuper_id\" = '21' WHERE \"id\" = '1'",
+    "Timestamp": "2026-06-24T14:55:27.1075783Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%ORBITA%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T14:54:48.493585873Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%Orbita%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T14:54:30.046252497Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE startuper_id = 21 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T14:53:07.676863452Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE startuper_id = 1 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T14:52:54.947110681Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%орбита%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T14:51:04.697981674Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%Орбита%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T14:50:54.6792894Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like 'Орбита' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T14:50:47.955761449Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE id = 1 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T14:50:27.747760362Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"status\" = 'PENDING' WHERE \"id\" = '1'",
+    "Timestamp": "2026-06-24T14:26:03.035860073Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"stage\" = 'PENDING' WHERE \"id\" = '1'",
+    "Timestamp": "2026-06-24T14:26:03.035248931Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE id = 1 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T14:25:15.375075196Z"
+  },
+  {
+    "QueryText": "INSERT INTO \"public\".\"startuper\" (id, user_id, current_startup_id) VALUES ('21', '1', '1')",
+    "Timestamp": "2026-06-24T14:13:59.00595683Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like 'startuper%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T14:10:57.462203998Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like '%test@test%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T05:56:58.542234599Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"user\" SET \"email\" = 'test@test55.ru' WHERE \"id\" = '340'",
+    "Timestamp": "2026-06-24T05:56:58.250419734Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like '%test@test%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-24T05:56:49.769541407Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%АгроС%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T15:36:30.791066403Z"
+  },
+  {
+    "QueryText": "SELECT id, stage, status, name \nFROM startup\nWHERE name like '%АгроС%';\n",
+    "Timestamp": "2026-06-19T07:59:58.679694488Z"
+  },
+  {
+    "QueryText": "SELECT id, stage, status, name FROM startup;\n",
+    "Timestamp": "2026-06-19T07:59:14.028296129Z"
+  },
+  {
+    "QueryText": "SELECT status FROM startup;",
+    "Timestamp": "2026-06-19T07:58:40.65287612Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like '%test@test%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:56:39.000578346Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"user\" SET \"email\" = 'test@test44.ru' WHERE \"id\" = '339'",
+    "Timestamp": "2026-06-19T07:47:02.971035414Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like '%test@test%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:46:57.573162871Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"user\" SET \"email\" = 'test@test33.ru' WHERE \"id\" = '338'",
+    "Timestamp": "2026-06-19T07:45:28.578209447Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%АгроС%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:45:21.380998396Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"stage\" = 'MODERATION' WHERE \"id\" = '538'",
+    "Timestamp": "2026-06-19T07:43:11.951576474Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"status\" = 'MODERATION' WHERE \"id\" = '538'",
+    "Timestamp": "2026-06-19T07:43:11.950927409Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%АгроС%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:41:54.017709771Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%Агро C%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:41:49.085252357Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%АгроC%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:41:44.286468883Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%Агрос%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:41:31.294389299Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like '%test@test%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:40:58.17030725Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE status = 'MODERATION' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:40:41.591112357Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"stage\" = 'MODERATION' WHERE \"id\" = '75'",
+    "Timestamp": "2026-06-19T07:40:41.134535723Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE status = 'MODERATION' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:40:09.809384132Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"stage\" = 'MODERATION' WHERE \"id\" = '55'",
+    "Timestamp": "2026-06-19T07:40:09.348794943Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE status = 'MODERATION' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:39:47.465520649Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"status\" = 'MODERATION' WHERE \"id\" = '210'",
+    "Timestamp": "2026-06-19T07:39:01.385291718Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"status\" = 'MODERATION' WHERE \"id\" = '190'",
+    "Timestamp": "2026-06-19T07:39:01.382432532Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"status\" = 'MODERATION' WHERE \"id\" = '70'",
+    "Timestamp": "2026-06-19T07:39:01.381573154Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like '%test@test%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:30:53.516773712Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"user\" SET \"email\" = 'test@test22.ru' WHERE \"id\" = '337'",
+    "Timestamp": "2026-06-19T07:27:05.465442971Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like '%test@test%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:26:58.399189782Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%777%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:24:03.62223362Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startuper\" WHERE \"id\" = '3'",
+    "Timestamp": "2026-06-19T07:12:40.152839346Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startuper\" WHERE \"id\" = '2'",
+    "Timestamp": "2026-06-19T07:12:40.151910177Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startuper\" WHERE \"id\" = '18'",
+    "Timestamp": "2026-06-19T07:10:37.294557441Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like '%test@test1%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:10:28.847456151Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startuper\" WHERE \"id\" = '1'",
+    "Timestamp": "2026-06-19T07:08:30.936591208Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like '%startuper%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:07:04.473262457Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like 'expert%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T09:53:27.217554429Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE id = 538 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T09:53:00.787613091Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like 'expert%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T09:41:56.346748253Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like 'exprt%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T09:41:53.230076359Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like 'moderator%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T09:41:48.547501888Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like 'investor%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T09:41:36.834393508Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like 'expert%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T09:40:05.723402252Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"review\" WHERE expert_id = 2 and startup_id = 538 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T08:54:56.589887848Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"review\" SET \"startup_id\" = '10' WHERE \"id\" = '243'",
+    "Timestamp": "2026-06-09T08:54:04.651264778Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"review\" WHERE expert_id = 2 and startup_id = 538 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T08:48:03.868889267Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"review\" WHERE expert_id = 2 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T08:47:37.219547148Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"review\" SET \"startup_id\" = '538' WHERE \"id\" = '243'",
+    "Timestamp": "2026-06-09T08:47:36.918073937Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"review\" WHERE expert_id = 2 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T08:47:15.558927027Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"review\" WHERE expert_id = 2 and startup_id = 538 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T08:46:57.010387294Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"review\" WHERE expert_id = 2 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T08:45:09.831931974Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"review\" WHERE startup_id = 538 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T08:42:44.393354936Z"
+  },
+  {
+    "QueryText": "INSERT INTO \"public\".\"review\" (id, created_at, reviewed_at, overall_score, comment, recommendation, state, startup_id, expert_id, deadline) VALUES (DEFAULT, '2025-06-01', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '538', '2', DEFAULT)",
+    "Timestamp": "2026-06-09T08:42:44.117228865Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE last_name like '%Кузнецов%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T08:41:55.847428203Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE last_name like '%кузнецов%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T08:41:43.288566745Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"review\" WHERE startup_id = 538 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T08:41:19.891999859Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE id = 538 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T08:38:27.014611016Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE status = 'REVIEW' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T07:46:59.424077564Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"stage\" = 'MODERATION' WHERE \"id\" = '86'",
+    "Timestamp": "2026-06-09T07:45:16.169904101Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"status\" = 'MODERATION' WHERE \"id\" = '86'",
+    "Timestamp": "2026-06-09T07:45:16.16971056Z"
+  },
+  {
+    "QueryText": "SELECT DISTINCT email FROM public.user;\n",
+    "Timestamp": "2026-06-04T10:26:21.597347148Z"
+  },
+  {
+    "QueryText": "SELECT * FROM public.user;\n",
+    "Timestamp": "2026-06-04T10:26:05.571751354Z"
+  },
+  {
+    "QueryText": "SELECT * FROM user;\n",
+    "Timestamp": "2026-06-04T10:25:46.388923711Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE \"email\" like '%expert%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-04T10:22:43.141208154Z"
+  },
+  {
+    "QueryText": "DROP SCHEMA public_bak CASCADE;\nCREATE SCHEMA public_bak;\n",
+    "Timestamp": "2026-06-04T07:03:31.716344669Z"
+  },
+  {
+    "QueryText": "DROP SCHEMA public CASCADE;\nCREATE SCHEMA public;\n",
+    "Timestamp": "2026-06-04T07:03:00.668239609Z"
+  },
+  {
+    "QueryText": "DROP SCHEMA public CASCADE;\nCREATE SCHEMA public;",
+    "Timestamp": "2026-05-08T07:06:46.097317042Z"
+  },
+  {
+    "QueryText": "ALTER SCHEMA public RENAME TO public_bak;\nCREATE SCHEMA public;",
+    "Timestamp": "2026-05-08T06:59:43.961714163Z"
+  }
+]

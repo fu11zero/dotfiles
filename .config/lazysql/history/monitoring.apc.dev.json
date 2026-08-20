@@ -1,0 +1,14 @@
+[
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE 'VPO2' \u003c= path LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-08-20T08:11:29.944653008Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"structure\" WHERE name = 'ВПО-24' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-08-20T08:10:45.978162439Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"data\" WHERE type = 'ENUM' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-08-14T15:17:01.255121144Z"
+  }
+]

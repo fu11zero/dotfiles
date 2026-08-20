@@ -1,0 +1,38 @@
+[
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like '%startuper%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-25T21:06:58.594610177Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like '%test@test%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:26:21.433081453Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%AI%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:25:01.292937828Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE name like '%77%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-19T07:24:54.503472841Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"user\" WHERE email like 'expert%' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-09T09:44:02.648586248Z"
+  },
+  {
+    "QueryText": "SELECT * FROM \"public\".\"startup\" WHERE id = 465 LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-05-25T08:27:00.983360877Z"
+  },
+  {
+    "QueryText": "INSERT INTO \"public\".\"expert\" (id, created_at, updated_at, company, education, experience, rating, reviews_count, user_id) VALUES (DEFAULT, '2026-04-09T12:23:12Z', '2026-04-10T13:32:53Z', DEFAULT, DEFAULT, DEFAULT, DEFAULT, '500', '2')",
+    "Timestamp": "2026-05-04T11:54:22.317848353Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"status\" = 'PENDING' WHERE \"id\" = '1'",
+    "Timestamp": "2026-04-29T08:57:13.785311306Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"stage\" = 'PENDING' WHERE \"id\" = '1'",
+    "Timestamp": "2026-04-29T08:56:45.790291286Z"
+  }
+]

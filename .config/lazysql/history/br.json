@@ -1,0 +1,6 @@
+[
+  {
+    "QueryText": "SELECT * FROM \"public\".\"server_status_history\" WHERE server_id = '549cd214-4642-4aef-a01a-3b63afca15e7' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-06-16T10:39:42.545945855Z"
+  }
+]

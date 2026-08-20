@@ -12,28 +12,42 @@ EnterOpensJSONViewer = false
 ConfirmOnQuit = true
 
 [[database]]
-Name = 'vrp'
+Name = 'uc.stride'
+URL = 'pgsql://app-user:sjNo2jbwRze4GpdXN7Nm@127.0.0.1:5434/stride?sslmode=disable'
+Provider = 'postgres'
+DBName = 'stride'
+Schemas = ['task_tracker']
+
+[[database]]
+Name = 'vrp я хз че это'
 URL = 'pgsql://app-user:TMS-secure-PaSsWoRd-27102025@localhost/postgres'
 Provider = 'postgres'
 DBName = 'postgres'
 Schemas = ['public']
 
 [[database]]
-Name = 'academy.local'
+Name = 'apc.moodle.local'
 URL = 'postgres://randomuser123:randompass456@localhost:5432/postgres?sslmode=disable'
 Provider = 'postgres'
 DBName = 'postgres'
 Schemas = ['public']
 
 [[database]]
-Name = 'academy.prod'
+Name = 'apc.moodle.prod'
 URL = 'pgsql://moodle:TnKAKHKInLnk@172.19.203.112:5432/postgres?sslmode=disable'
 Provider = 'postgres'
 DBName = 'moodle'
 Schemas = ['public']
 
 [[database]]
-Name = 'academy.bi'
+Name = 'apc.academy.prod'
+URL = 'pgsql://agroacademy:s7AXtKOWqNN6LX@10.11.61.31:5432/agroacademy?sslmode=disable'
+Provider = 'postgres'
+DBName = 'agroacademy'
+Schemas = ['public']
+
+[[database]]
+Name = 'apc.academy.prod.bi'
 URL = 'pgsql://bi:Nwh7i9y4RjZ49BPlDuNb@127.0.0.1:${port}/postgres?sslmode=disable'
 Provider = 'postgres'
 DBName = 'bi'
@@ -46,14 +60,14 @@ SaveOutputTo = ''
 Timeout = 0
 
 [[database]]
-Name = 'monitoring.apc.local'
+Name = 'apc.monitoring.local'
 URL = 'pgsql://universities:universities@127.0.0.1:45432/universities?sslmode=disable'
 Provider = 'postgres'
 DBName = 'universities'
 Schemas = ['public']
 
 [[database]]
-Name = 'monitoring.apc.dev'
+Name = 'apc.monitoring.dev'
 URL = 'pgsql://app-user:L%40R%25wYvrx%7BcCR3Td@localhost:${port}/postgres?sslmode=disable'
 Provider = 'postgres'
 DBName = 'postgres'
@@ -66,14 +80,14 @@ SaveOutputTo = ''
 Timeout = 0
 
 [[database]]
-Name = 'startup.apc.local'
+Name = 'apc.startups.local'
 URL = 'pgsql://startup:startup-factory@127.0.0.1:25432/startup?sslmode=disable'
 Provider = 'postgres'
 DBName = 'startup'
 Schemas = ['public']
 
 [[database]]
-Name = 'startup.apc.dev'
+Name = 'apc.startups.dev'
 URL = 'pgsql://app-user:ZlmsaOKBGwhgh7rjpZJ2@localhost:${port}/postgres?sslmode=disable'
 Provider = 'postgres'
 DBName = 'postgres'
@@ -86,7 +100,7 @@ SaveOutputTo = ''
 Timeout = 0
 
 [[database]]
-Name = 'startup.test'
+Name = 'apc.startups.test'
 URL = 'pgsql://startup_factory:s7AXtKOWqNN6LX@localhost:${port}/startup_factory?sslmode=disable'
 Provider = 'postgres'
 DBName = 'startup_factory'

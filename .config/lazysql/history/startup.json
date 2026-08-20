@@ -1,0 +1,518 @@
+[
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '117'",
+    "Timestamp": "2026-04-28T06:30:52.215509966Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '115'",
+    "Timestamp": "2026-04-28T06:30:52.214949136Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '113'",
+    "Timestamp": "2026-04-28T06:30:52.214392754Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '118'",
+    "Timestamp": "2026-04-28T06:30:52.213763464Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '116'",
+    "Timestamp": "2026-04-28T06:30:52.213023018Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '114'",
+    "Timestamp": "2026-04-28T06:30:52.21222967Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"status_history\" WHERE \"id\" = '14'",
+    "Timestamp": "2026-04-28T06:30:42.17610987Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startuper\" WHERE \"id\" = '2'",
+    "Timestamp": "2026-04-28T06:30:06.400224239Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '112'",
+    "Timestamp": "2026-04-28T05:20:04.187616935Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '107'",
+    "Timestamp": "2026-04-28T05:18:42.982493793Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"status_history\" WHERE \"id\" = '13'",
+    "Timestamp": "2026-04-28T05:18:29.598326701Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"status_history\" WHERE \"id\" = '12'",
+    "Timestamp": "2026-04-28T05:18:29.597993793Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"status_history\" WHERE \"id\" = '11'",
+    "Timestamp": "2026-04-28T05:18:29.597672957Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"status_history\" WHERE \"id\" = '10'",
+    "Timestamp": "2026-04-28T05:18:29.597354752Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"status_history\" WHERE \"id\" = '9'",
+    "Timestamp": "2026-04-28T05:18:29.597031386Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"status_history\" WHERE \"id\" = '8'",
+    "Timestamp": "2026-04-28T05:18:29.596720671Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"status_history\" WHERE \"id\" = '7'",
+    "Timestamp": "2026-04-28T05:18:29.596409166Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"status_history\" WHERE \"id\" = '6'",
+    "Timestamp": "2026-04-28T05:18:29.596082054Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"status_history\" WHERE \"id\" = '5'",
+    "Timestamp": "2026-04-28T05:18:29.595763481Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"status_history\" WHERE \"id\" = '3'",
+    "Timestamp": "2026-04-28T05:18:29.595407625Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"status_history\" WHERE \"id\" = '2'",
+    "Timestamp": "2026-04-28T05:18:29.594770968Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startuper\" WHERE \"id\" = '1'",
+    "Timestamp": "2026-04-28T05:18:15.827290301Z"
+  },
+  {
+    "QueryText": "SELECT * FROM startup s0_ WHERE s0_.stage = 'MODERATION' LIMIT 20\n",
+    "Timestamp": "2026-04-27T07:01:10.370340393Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"stage\" = 'INVALID' WHERE \"id\" = '107'",
+    "Timestamp": "2026-04-23T07:50:00.280690258Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startuper\" SET \"user_id\" = '1' WHERE \"id\" = '1'",
+    "Timestamp": "2026-04-23T07:20:04.722225528Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '105'",
+    "Timestamp": "2026-04-22T12:36:49.223511216Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '103'",
+    "Timestamp": "2026-04-22T12:36:49.22322928Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '101'",
+    "Timestamp": "2026-04-22T12:36:49.222925034Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '99'",
+    "Timestamp": "2026-04-22T12:36:49.222616298Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '97'",
+    "Timestamp": "2026-04-22T12:36:49.222304994Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '95'",
+    "Timestamp": "2026-04-22T12:36:49.221980531Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '93'",
+    "Timestamp": "2026-04-22T12:36:49.221661154Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '91'",
+    "Timestamp": "2026-04-22T12:36:49.221340081Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '89'",
+    "Timestamp": "2026-04-22T12:36:49.2210109Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '109'",
+    "Timestamp": "2026-04-22T12:36:49.220696404Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '110'",
+    "Timestamp": "2026-04-22T12:36:49.220380702Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '108'",
+    "Timestamp": "2026-04-22T12:36:49.219974359Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '106'",
+    "Timestamp": "2026-04-22T12:36:49.219517798Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '104'",
+    "Timestamp": "2026-04-22T12:36:49.219107968Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '102'",
+    "Timestamp": "2026-04-22T12:36:49.21866627Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '100'",
+    "Timestamp": "2026-04-22T12:36:49.217940161Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '98'",
+    "Timestamp": "2026-04-22T12:36:49.21708838Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '96'",
+    "Timestamp": "2026-04-22T12:36:49.216216541Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '94'",
+    "Timestamp": "2026-04-22T12:36:49.215349072Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '92'",
+    "Timestamp": "2026-04-22T12:36:49.214451918Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '90'",
+    "Timestamp": "2026-04-22T12:36:49.213554927Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '87'",
+    "Timestamp": "2026-04-22T10:56:35.072402056Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '88'",
+    "Timestamp": "2026-04-22T10:56:35.072151937Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '86'",
+    "Timestamp": "2026-04-22T10:56:35.071809598Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '85'",
+    "Timestamp": "2026-04-22T10:16:11.476107548Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '83'",
+    "Timestamp": "2026-04-22T10:14:47.328009572Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '84'",
+    "Timestamp": "2026-04-22T10:14:47.32760562Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '81'",
+    "Timestamp": "2026-04-22T09:38:56.533276866Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '82'",
+    "Timestamp": "2026-04-22T09:38:56.532984612Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '79'",
+    "Timestamp": "2026-04-22T07:16:30.246595378Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '77'",
+    "Timestamp": "2026-04-22T07:16:30.246345346Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '80'",
+    "Timestamp": "2026-04-22T07:16:30.246011427Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '78'",
+    "Timestamp": "2026-04-22T07:16:30.245596793Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '76'",
+    "Timestamp": "2026-04-22T05:25:26.435649886Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '75'",
+    "Timestamp": "2026-04-22T03:57:44.123085665Z"
+  },
+  {
+    "QueryText": "UPDATE \"public\".\"startup\" SET \"session_id\" = 'eaa79297d3c791210d5d67c5b2d71b7a' WHERE \"id\" = '75'",
+    "Timestamp": "2026-04-21T07:18:23.777317993Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '74'",
+    "Timestamp": "2026-04-21T06:44:21.558561115Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '73'",
+    "Timestamp": "2026-04-21T06:36:41.495710137Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '71'",
+    "Timestamp": "2026-04-21T06:36:41.495146788Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '72'",
+    "Timestamp": "2026-04-21T06:36:41.494442562Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '69'",
+    "Timestamp": "2026-04-21T06:30:25.465276736Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '70'",
+    "Timestamp": "2026-04-21T06:30:25.463458521Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '67'",
+    "Timestamp": "2026-04-21T05:26:21.705725544Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '65'",
+    "Timestamp": "2026-04-21T05:26:21.705394757Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '68'",
+    "Timestamp": "2026-04-21T05:26:21.705055815Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '66'",
+    "Timestamp": "2026-04-21T05:26:21.704634166Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '64'",
+    "Timestamp": "2026-04-21T05:22:02.530909694Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '63'",
+    "Timestamp": "2026-04-21T05:21:55.950917186Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '62'",
+    "Timestamp": "2026-04-21T05:17:47.883943283Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '61'",
+    "Timestamp": "2026-04-21T05:17:47.883792803Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '60'",
+    "Timestamp": "2026-04-21T05:17:47.883617413Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '59'",
+    "Timestamp": "2026-04-21T05:17:47.883472433Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '58'",
+    "Timestamp": "2026-04-21T05:17:47.883327824Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '57'",
+    "Timestamp": "2026-04-21T05:17:47.88318152Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '56'",
+    "Timestamp": "2026-04-21T05:17:47.8830346Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '55'",
+    "Timestamp": "2026-04-21T05:17:47.882890699Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '54'",
+    "Timestamp": "2026-04-21T05:17:47.882752505Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '53'",
+    "Timestamp": "2026-04-21T05:17:47.882613617Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '52'",
+    "Timestamp": "2026-04-21T05:17:47.882479882Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '51'",
+    "Timestamp": "2026-04-21T05:17:47.882340682Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '50'",
+    "Timestamp": "2026-04-21T05:17:47.882195443Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '49'",
+    "Timestamp": "2026-04-21T05:17:47.882065035Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '48'",
+    "Timestamp": "2026-04-21T05:17:47.881933847Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '47'",
+    "Timestamp": "2026-04-21T05:17:47.881807796Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '46'",
+    "Timestamp": "2026-04-21T05:17:47.88155486Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '45'",
+    "Timestamp": "2026-04-21T05:17:47.88123984Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '44'",
+    "Timestamp": "2026-04-21T05:17:47.880908249Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '43'",
+    "Timestamp": "2026-04-21T05:17:47.880602994Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '42'",
+    "Timestamp": "2026-04-21T05:17:47.880298217Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '41'",
+    "Timestamp": "2026-04-21T05:17:47.879988673Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '40'",
+    "Timestamp": "2026-04-21T05:17:47.879707077Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '39'",
+    "Timestamp": "2026-04-21T05:17:47.879476808Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '38'",
+    "Timestamp": "2026-04-21T05:17:47.879246431Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '37'",
+    "Timestamp": "2026-04-21T05:17:47.879005169Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '36'",
+    "Timestamp": "2026-04-21T05:17:47.878748578Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '35'",
+    "Timestamp": "2026-04-21T05:17:47.878542045Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '34'",
+    "Timestamp": "2026-04-21T05:17:47.878337377Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '33'",
+    "Timestamp": "2026-04-21T05:17:47.878136491Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '32'",
+    "Timestamp": "2026-04-21T05:17:47.877928515Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '31'",
+    "Timestamp": "2026-04-21T05:17:47.877736359Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '30'",
+    "Timestamp": "2026-04-21T05:17:47.877538883Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '29'",
+    "Timestamp": "2026-04-21T05:17:47.87734403Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '28'",
+    "Timestamp": "2026-04-21T05:17:47.877149798Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '27'",
+    "Timestamp": "2026-04-21T05:17:47.876951738Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '26'",
+    "Timestamp": "2026-04-21T05:17:47.876796636Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '25'",
+    "Timestamp": "2026-04-21T05:17:47.876652299Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '24'",
+    "Timestamp": "2026-04-21T05:17:47.876456694Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '21'",
+    "Timestamp": "2026-04-21T04:02:22.536019729Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '19'",
+    "Timestamp": "2026-04-21T04:02:22.535755694Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '23'",
+    "Timestamp": "2026-04-21T04:02:22.535520138Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '22'",
+    "Timestamp": "2026-04-21T04:02:22.535281308Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '20'",
+    "Timestamp": "2026-04-21T04:02:22.535011402Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '18'",
+    "Timestamp": "2026-04-21T04:02:22.534780944Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '17'",
+    "Timestamp": "2026-04-21T04:02:22.534544839Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '16'",
+    "Timestamp": "2026-04-21T04:02:22.534214345Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '15'",
+    "Timestamp": "2026-04-21T03:40:14.832670691Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '14'",
+    "Timestamp": "2026-04-21T03:40:14.832512884Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '13'",
+    "Timestamp": "2026-04-21T03:40:14.832369757Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '12'",
+    "Timestamp": "2026-04-21T03:40:14.832230907Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '11'",
+    "Timestamp": "2026-04-21T03:40:14.832090911Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '10'",
+    "Timestamp": "2026-04-21T03:40:14.831944007Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '8'",
+    "Timestamp": "2026-04-21T03:40:14.831804066Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '7'",
+    "Timestamp": "2026-04-21T03:40:14.831643525Z"
+  },
+  {
+    "QueryText": "DELETE FROM \"public\".\"startup\" WHERE \"id\" = '9'",
+    "Timestamp": "2026-04-21T03:40:14.831430096Z"
+  }
+]
