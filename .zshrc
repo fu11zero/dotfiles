@@ -172,6 +172,8 @@ alias P="cd ~/Projects"
 #alias ncal="cal -M"
 #alias ncal="cal -M"
 alias nv="nvim ."
+#alias oc="opencode"
+alias ai="claude"
 
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias lazydotfiles="lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
