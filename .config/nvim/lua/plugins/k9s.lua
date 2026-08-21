@@ -12,7 +12,6 @@ end
 local function open_k9s(cmd)
     floating_terminal.toggle("k9s", cmd, {
         title = "k9s",
-        hide_key = "<C-k>",
     })
 end
 
@@ -76,4 +75,4 @@ local function open_k9s_smart()
 end
 
 -- Маппинг клавиши
-vim.keymap.set("n", "<C-k>", open_k9s_smart, { desc = "Smart K9s Floating Window" })
+vim.keymap.set("n", "<leader>k", open_k9s_smart, { desc = "Smart K9s Floating Window" })

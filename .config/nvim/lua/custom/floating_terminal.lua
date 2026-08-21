@@ -47,11 +47,13 @@ function M.toggle(id, cmd, opts)
     instances[id] = term
     local buf = term.buf
 
-    if opts.hide_key then
-        vim.keymap.set("t", opts.hide_key, function()
-            term:hide()
-        end, { buffer = buf, nowait = true, desc = "Hide " .. (opts.title or id) })
+    if !opts.hide_key then
+        opts.hide_key = "<C-q>"
     end
+
+    vim.keymap.set("t", opts.hide_key, function()
+        term:hide()
+    end, { buffer = buf, nowait = true, desc = "Hide " .. (opts.title or id) })
 
     -- Принудительное удержание режима Insert при фокусе буфера
     vim.api.nvim_create_autocmd({ "BufEnter", "CursorMoved" }, {

@@ -3,17 +3,16 @@
 local floating_terminal = require("custom.floating_terminal")
 
 -- Глобальный хоткей для управления окном (работает в Normal и Terminal режимах)
-vim.keymap.set("n", "<C-s>", function()
+vim.keymap.set("n", "<leader>s", function()
     floating_terminal.toggle("lazysql", "lazysql", {
         title = "LazySQL",
-        hide_key = "<C-s>",
     })
 end, { desc = "Toggle LazySQL Terminal" })
 
 
 -- Отдельная команда для открытия LazySQL в собственной вкладке
 vim.api.nvim_create_user_command("LazySQL", function()
-  local buf = vim.api.nvim_create_buf(false, true)
+  local buf = vim.api.nvim_create_buf(true, true)
 
   vim.api.nvim_win_set_buf(0, buf)
 
@@ -31,5 +30,5 @@ vim.api.nvim_create_user_command("LazySQL", function()
 
 end, {})
 
-vim.keymap.set("n", "<leader>s", "<cmd>:LazySQL<CR>");
+vim.keymap.set("n", "<leader>S", "<cmd>:LazySQL<CR>");
 
