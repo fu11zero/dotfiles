@@ -141,10 +141,10 @@ end
 -- /ПАТЧ bufferline: исправляет расчёт ширины offset (см. ниже)
 
 
-vim.keymap.set({'n', 'v', 'i'}, '<M-l>', ':BufferLineCycleNext<CR>')
-vim.keymap.set({'n', 'v', 'i'}, '<M-h>', ':BufferLineCyclePrev<CR>')
-vim.keymap.set({'n', 'v', 'i'}, '<M-S-l>', ':BufferLineMoveNext<CR>')
-vim.keymap.set({'n', 'v', 'i'}, '<M-S-h>', ':BufferLineMovePrev<CR>')
-vim.keymap.set({'n', 'v', 'i'}, '<C-q>', ':bp|bd #<CR>', { silent = true })
-vim.keymap.set({'n', 'v', 'i'}, '<C-S-Q>', ':BufferLineCloseOthers<CR>')
+vim.keymap.set({'n', 'v', 'i', 't'}, '<M-l>', ':BufferLineCycleNext<CR>')
+vim.keymap.set({'n', 'v', 'i', 't'}, '<M-h>', ':BufferLineCyclePrev<CR>')
+vim.keymap.set({'n', 'v', 'i', 't'}, '<M-S-l>', ':BufferLineMoveNext<CR>')
+vim.keymap.set({'n', 'v', 'i', 't'}, '<M-S-h>', ':BufferLineMovePrev<CR>')
+vim.keymap.set({'n', 'v', 'i', 't'}, '<C-q>', ':bp|bd #<CR>', { silent = true })
+vim.keymap.set({'n', 'v', 'i', 't'}, '<C-S-Q>', ':BufferLineCloseOthers<CR>')
 
