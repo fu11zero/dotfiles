@@ -1,4 +1,9 @@
 [[mgr.prepend_keymap]]
+on = [ "<C-Enter>" ]
+run = "shell 'ghostty --working-directory=\"$PWD\" -e yazi' --orphan"
+desc = "Open new Yazi instance in Ghostty"
+
+[[mgr.prepend_keymap]]
 on   = [ "P" ]
 run  = "link --relative"
 desc = "Вставить как относительную симлинку"
@@ -145,3 +150,4 @@ desc = "Удалить файлы навсегда (безвозвратно)"
 on   = [ "d", "D" ]
 run  = "unyank"
 desc = "Убрать метку для перемещения (Cut)"
+
