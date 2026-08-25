@@ -13,10 +13,16 @@ ConfirmOnQuit = true
 
 [[database]]
 Name = 'uc.stride'
-URL = 'pgsql://app-user:sjNo2jbwRze4GpdXN7Nm@127.0.0.1:5434/stride?sslmode=disable'
+URL = 'pgsql://app-user:sjNo2jbwRze4GpdXN7Nm@127.0.0.1:${port}/stride?sslmode=disable'
 Provider = 'postgres'
 DBName = 'stride'
 Schemas = ['task_tracker']
+
+[[database.Commands]]
+Command = 'ssh -tt -L ${port}:localhost:5434 unitcode.stride'
+WaitForPort = '${port}'
+SaveOutputTo = ''
+Timeout = 0
 
 [[database]]
 Name = 'vrp я хз че это'
