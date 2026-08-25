@@ -18,4 +18,5 @@ clipboard-paste-protection = false
 # Бинды
 keybind = ctrl+shift+q=unbind
 keybind = ctrl+shift+e=unbind
+keybind = ctrl+shift+t=unbind
 keybind = ctrl+enter=unbind
