@@ -16,9 +16,10 @@ require('core.clipboard')
 -- Custom
 require('custom.ai')
 require('custom.readme')
-require('custom.id')
+require('custom.generators')
 require('custom.angular')
 require('custom.database')
+require('custom.docker')
 
 -- Plugins
 require('plugins.autolayout')

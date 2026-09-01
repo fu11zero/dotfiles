@@ -20,8 +20,7 @@ vim.keymap.set('n', '<C-S-E>', ':NvimTreeToggle<CR>')
 vim.keymap.set('n', '<leader>p', Snacks.picker.cliphist, { desc = "История буфера обмена", noremap = true, silent = true })
 vim.keymap.set({'n', 'v'}, '<leader>ic', Snacks.picker.icons, { desc = "Выбор иконки", noremap = true, silent = true } )
 
--- LazyDocker
-vim.keymap.set("n", "<leader>d", "<cmd>lua LazyDocker.toggle()<CR>", { desc = "Toggle LazyDocker", noremap = true, silent = true })
+-- LazyDocker: см. custom/docker.lua (<leader>d)
 
 -- TodoList
 vim.keymap.set('n', '<leader>nl', ':TodoTelescope<CR>')

@@ -29,6 +29,10 @@
 
 local floating_terminal = require("custom.floating_terminal")
 local unitcode_project = require("custom.unitcode_project")
+local compose = require("custom.compose_discovery")
+
+local handle_cmd = compose.handle_cmd
+local read_file = compose.read_file
 
 local K8S_CONTEXT = "unitcode-dev"
 local SSH_JUMP_HOST = "root@k8s.unitcode.dev"
@@ -42,14 +46,6 @@ local CONTEXT_LABELS = {
 
 local function context_label()
     return CONTEXT_LABELS[K8S_CONTEXT] or K8S_CONTEXT
-end
-
-local function handle_cmd(cmd)
-    local f = io.popen(cmd .. " 2>/dev/null")
-    if not f then return "" end
-    local result = f:read("*a")
-    f:close()
-    return result:gsub("%s+$", "")
 end
 
 local function urlencode(str)
@@ -128,73 +124,11 @@ Timeout = 0
 ]==], name, urlencode(user), urlencode(password), db, db, host_fqdn, SSH_JUMP_PORT, SSH_JUMP_HOST)
 end
 
--- Прод: ssh-хост стенда -> compose.yaml -> .env
---
--- Хост ищем по алиасам из ssh-конфига архитектуры (~/.ssh/unitcode/conf/,
--- см. ~/Projects/unitcode/architecture) — unsorted.conf сознательно
--- пропускаем, это временный черновик. Кандидаты алиасов по пути в gitlab
--- "group/project": "group.project" (unitcode/stride -> unitcode.stride),
--- затем просто "group", затем просто "project" — так покрывается и
--- unitcode.stride, и, например, dubrava/backend -> dubrava.
+-- Прод: ssh-хост стенда (custom.compose_discovery) -> compose.yaml -> .env
 --
 -- На хосте ищем compose.yaml/docker-compose.yml проекта в /data/<project>,
 -- в нём — постгрес-сервис и проброшенный на localhost порт
 -- ("127.0.0.1:5434:5432"), а пользователя/пароль/базу — в лежащем рядом .env.
-
-local function list_ssh_hosts()
-    local raw = handle_cmd([[for f in ~/.ssh/unitcode/conf/*.conf; do [ "$(basename "$f")" = "unsorted.conf" ] && continue; grep -h "^Host " "$f"; done]])
-    local hosts = {}
-    for line in raw:gmatch("[^\r\n]+") do
-        for alias in line:gmatch("%S+") do
-            if alias ~= "Host" then
-                hosts[alias] = true
-            end
-        end
-    end
-    return hosts
-end
-
---- Ищет ssh-алиас продакшн-хоста проекта по группе/проекту gitlab.
----@return string|nil
-local function find_prod_host_alias(group, project)
-    local hosts = list_ssh_hosts()
-    for _, candidate in ipairs({ group .. "." .. project, group, project }) do
-        if hosts[candidate] then
-            return candidate
-        end
-    end
-    return nil
-end
-
---- Выполняет разведывательную команду на хосте. Некоторые хосты в
---- ~/.ssh/unitcode/conf/ объявляют RemoteCommand (авто-cd в директорию
---- проекта), а ssh отказывается сочетать его с командой из командной
---- строки — поэтому явно его отключаем.
-local function ssh_run(host_alias, remote_cmd)
-    return handle_cmd(string.format(
-        "ssh -o RemoteCommand=none %s '%s'",
-        host_alias, remote_cmd
-    ))
-end
-
---- Ищет docker-compose файл проекта на хосте, сперва по стандартному пути
---- /data/<project>/, затем более широким поиском по /data.
----@return string|nil путь к compose-файлу на удалённом хосте
-local function find_compose_path(host_alias, project)
-    local fast = string.format(
-        [[for f in /data/%s/compose.yaml /data/%s/compose.yml /data/%s/docker-compose.yaml /data/%s/docker-compose.yml; do [ -f "$f" ] && echo "$f" && break; done]],
-        project, project, project, project
-    )
-    local path = ssh_run(host_alias, fast)
-    if path ~= "" then return path end
-
-    local wide = string.format(
-        [[find /data -maxdepth 2 \( -path '*/%s/compose.y*ml' -o -path '*/%s/docker-compose*.y*ml' \) 2>/dev/null | head -1]],
-        project, project
-    )
-    path = ssh_run(host_alias, wide)
-    return path ~= "" and path or nil
-end
 
 --- Группирует строки docker-compose файла по сервисам верхнего уровня
 --- (2 пробела отступа — имя сервиса, 4+ — его содержимое).
@@ -260,7 +194,7 @@ end
 ---@return string|nil password
 ---@return string|nil db
 local function read_remote_env_postgres(host_alias, compose_dir)
-    local raw = ssh_run(host_alias, string.format(
+    local raw = compose.ssh_run(host_alias, string.format(
         [[grep -iE "^(POSTGRES_USER|POSTGRES_PASSWORD|POSTGRES_DB|POSTGRES_NAME)=" %s/.env 2>/dev/null]],
         compose_dir
     ))
@@ -306,18 +240,18 @@ end
 ---@return table|nil entry
 ---@return string|nil reason
 local function build_prod_entry(proj)
-    local host_alias = find_prod_host_alias(proj.group, proj.project)
+    local host_alias = compose.find_prod_host_alias(proj.group, proj.project)
     if not host_alias then
         return nil, "не нашёл ssh-хост для " .. proj.group .. "/" .. proj.project
     end
 
-    local compose_path = find_compose_path(host_alias, proj.project)
+    local compose_path = compose.find_remote_compose_path(host_alias, proj.project)
     if not compose_path then
         return nil, "не нашёл compose-файл на " .. host_alias
     end
     local compose_dir = compose_path:match("^(.*)/[^/]+$")
 
-    local compose_text = ssh_run(host_alias, "cat " .. compose_path)
+    local compose_text = compose.ssh_run(host_alias, "cat " .. compose_path)
     local pg_services = find_postgres_services_in_compose(compose_text)
     if #pg_services == 0 then
         return nil, "не нашёл проброшенный порт postgres в " .. compose_path
@@ -352,38 +286,14 @@ end
 -- Порт уже локальный (проброшен самим docker compose на хост-машину) —
 -- ssh-туннель и ${port}-подстановка не нужны, URL сразу рабочий.
 
-local function read_file(path)
-    local f = io.open(path, "r")
-    if not f then return nil end
-    local content = f:read("*a")
-    f:close()
-    return content
-end
-
-local function find_local_project_root()
-    local root = handle_cmd("git rev-parse --show-toplevel")
-    return root ~= "" and root or nil
-end
-
----@return string|nil путь к compose-файлу в корне проекта
-local function find_local_compose_path(root)
-    for _, name in ipairs({ "compose.yaml", "compose.yml", "docker-compose.yaml", "docker-compose.yml" }) do
-        local path = root .. "/" .. name
-        if read_file(path) then
-            return path
-        end
-    end
-    return nil
-end
-
 --- Собирает записи локальных postgres-баз проекта (может быть несколько
 --- сервисов, например основная и тестовая база).
 ---@return table[]
 local function build_local_entries(proj)
-    local root = find_local_project_root()
+    local root = compose.find_local_project_root()
     if not root then return {} end
 
-    local compose_path = find_local_compose_path(root)
+    local compose_path = compose.find_local_compose_path(root)
     if not compose_path then return {} end
 
     local compose_text = read_file(compose_path) or ""
@@ -425,12 +335,7 @@ end
 --- Пишет временный lazysql-конфиг из уже собранных TOML-кусков.
 ---@return string|nil путь к временному конфигу
 local function write_temp_config(entries_toml)
-    local path = vim.fn.tempname() .. "-lazysql.toml"
-    local f = io.open(path, "w")
-    if not f then return nil end
-    f:write(entries_toml)
-    f:close()
-    return path
+    return compose.write_temp_file(entries_toml, "-lazysql.toml")
 end
 
 -- В списке базы всегда идут в этом порядке: local -> dev -> prod.
