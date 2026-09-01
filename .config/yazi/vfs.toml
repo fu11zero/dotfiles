@@ -1,10 +1,10 @@
-[services.home]
-type = "sftp"
-host = "fullzero.keenetic.link"
-user = "fullzero"
-# pass = "dfvgbh"
-port = 22
-key_file = "~/.ssh/id_rsa"
+# [services.home]
+# type = "sftp"
+# host = "fullzero.keenetic.link"
+# user = "fullzero"
+# # pass = "dfvgbh"
+# port = 22
+# key_file = "~/.ssh/id_rsa"
 
 # [services.infnull]
 # type = "smb"
